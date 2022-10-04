@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Oswald, sans-serif;
+    background-color: #F9FAFC;
+    height: calc(100vh - 164px);
+    color: bisque;
+    margin: 0;
+    padding: 0;
+}
+
+.home-header {
+    background-color: rgb(47, 44, 44);
+    color: bisque;
+}
