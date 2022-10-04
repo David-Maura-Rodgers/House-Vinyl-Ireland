@@ -1,30 +1,57 @@
-<div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
-                Home
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Search Vinyl
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Release Date</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Vinyl By Label
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Defected</a>
-                <a href="" class="dropdown-item">Glitterbox</a>
-                <a href="" class="dropdown-item">Nu Groove</a>
-                <a href="" class="dropdown-item">Freeze Records</a>
-            </div>
-        </li>
-    </ul>
-</div>
+<ul class="navbar-nav ml-auto w-auto mx-auto">
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" 
+            aria-haspopup="true" aria-expanded="false" href="{% url 'home' %}">
+            Home
+        </a>
+    </li>
+    <li class="nav-item dropdown nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Browse Vinyl
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <a href="" class="dropdown-item">By Price</a>
+            <a href="" class="dropdown-item ">By Label</a>
+            <a href="" class="dropdown-item ">By Release Date</a>
+            <a href="" class="dropdown-item">All Products</a>
+        </div>
+    </li>
+    
+    {% if request.user.is_authenticated %}
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
+            aria-haspopup="true" aria-expanded="false" href="{% url 'profile' %}">Profile</a>
+    </li>
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
+            aria-haspopup="true" aria-expanded="false" href="{% url 'account_logout' %}">Sign Out</a>
+    </li>
+    
+    {% if request.user.is_superuser %}
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop Management</a>
+    </li>
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
+            aria-haspopup="true" aria-expanded="false" href="">Admin</a>
+    </li>
+    {% endif %}
+    
+    {% else %}
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
+            aria-haspopup="true" aria-expanded="false" href="{% url 'account_signup' %}">Register</a>
+    </li>
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" 
+            aria-haspopup="true" aria-expanded="false" href="{% url 'account_login' %}">Log In</a>
+    </li>
+    {% endif %}
+   
+    <li class="nav-item nav-font">
+        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" aria-haspopup="true" 
+            aria-expanded="false" href="">Contact Us</a>
+    </li>
+</ul>

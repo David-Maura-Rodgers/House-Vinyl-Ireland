@@ -6,16 +6,16 @@ html {
 
 body {
     font-family: Oswald, sans-serif;
-    background-color: #F9FAFC;
+    background-color: rgb(237, 224, 207);
     height: calc(100vh - 164px);
-    color: bisque;
+    /* color: bisque; */
     margin: 0;
     padding: 0;
 }
 
 .home-header {
-    background-color: rgb(47, 44, 44);
-    color: rgb(203, 160, 106);
+    /* background-color: white; */
+    color: rgb(18, 12, 6);
 }
 
 /* from Bulma */
@@ -27,20 +27,16 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
-
-.main-logo-link {
-    width: fit-content;
-}
-
 .text-black {
     color: #000 !important;
 }
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.nav-font {
+    font-size: 20px;
 }
 
 /* -------------------------------- Media Queries */
