@@ -1,0 +1,41 @@
+[{
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+        "artist": "Kerri Chandler",
+        "title": "Spaces and Places: Album Sampler 4",
+        "price": 30.00,
+        "image_url": "https://defected.com/media/catalog/product/cache/3415d607b18eb8703a6ed591f8e10c1d/s/a/sapces_and_places_sampler_4_-_back.jpg",
+        "image": "record-1-kaoz"
+    }
+}, {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+        "artist": "Avant Garde",
+        "title": "Perpetuity",
+        "price": 22.00,
+        "image_url": "https://defected.com/media/catalog/product/cache/3415d607b18eb8703a6ed591f8e10c1d/f/a/faith_perpetuity_12vinyl_002.jpg",
+        "image": "record-2-faith"
+    }
+}, {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+        "artist": "Shuya Okino",
+        "title": "Still In Love",
+        "price": 13.50,
+        "image_url": "https://defected.com/media/catalog/product/cache/3415d607b18eb8703a6ed591f8e10c1d/s/h/shuya_vinyl_mockup_001.jpeg",
+        "image": "record-3-glitterbox"
+    }
+}, {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+        "artist": "Utopia Project",
+        "title": "Intuition",
+        "price": 13.50,
+        "image_url": "https://defected.com/media/catalog/product/cache/c33f988bd6765d48b9f6b279982a34b6/n/u/nugroove_intuition_12vinyl_001.jpg",
+        "image": "record-3-nugroove"
+    }
+}]
