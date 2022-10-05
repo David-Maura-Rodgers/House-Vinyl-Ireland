@@ -27,8 +27,9 @@ body {
 .home-header {
     background: url("/static/images/home-header-vinyl-5.jpg") no-repeat center center fixed;
     background-size: cover;
-    height: 15vh;
-    padding: 2%;
+    height: 20vh;
+    padding: 3%;
+    font-weight: 900;
     text-align: center;
     margin: 0;
     color: #7ea8d8;
