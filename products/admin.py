@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Label, Record, Image
+from .models import Label, Record
 
 
 class LabelAdmin(admin.ModelAdmin):
@@ -23,14 +23,5 @@ class RecordAdmin(admin.ModelAdmin):
     ordering = ('artist',)
 
 
-class ImageAdmin(admin.ModelAdmin):
-    '''
-    Change image for each Record
-    '''
-    list_display = ('image_name', 'image', 'record')
-    ordering = ('record',)
-
-
 admin.site.register(Label, LabelAdmin)
 admin.site.register(Record, RecordAdmin)
-admin.site.register(Image, ImageAdmin)

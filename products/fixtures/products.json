@@ -1,6 +1,6 @@
 [{
     "pk": 1,
-    "model": "products.product",
+    "model": "products.record",
     "fields": {
         "artist": "Kerri Chandler",
         "title": "Spaces and Places: Album Sampler 4",
@@ -10,7 +10,7 @@
     }
 }, {
     "pk": 2,
-    "model": "products.product",
+    "model": "products.record",
     "fields": {
         "artist": "Avant Garde",
         "title": "Perpetuity",
@@ -20,7 +20,7 @@
     }
 }, {
     "pk": 3,
-    "model": "products.product",
+    "model": "products.record",
     "fields": {
         "artist": "Shuya Okino",
         "title": "Still In Love",
@@ -30,7 +30,7 @@
     }
 }, {
     "pk": 4,
-    "model": "products.product",
+    "model": "products.record",
     "fields": {
         "artist": "Utopia Project",
         "title": "Intuition",
