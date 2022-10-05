@@ -45,21 +45,19 @@ body {
     background-color: white !important;
     width: 200%;
     background-size:200%;
-    /* position: absolute; */
 }
 
 #scroll-container {
     /* overflow: hidden; */
-    /* margin-left: 100%; */
     background-size:200%;
     position: relative;
     width: 220vmin;
 }
 
 #scroll {
-    animation: slide 25s linear infinite;
-    -webkit-animation: slide 25s linear infinite;
-    -moz-animation: slide 25s linear infinite;
+    animation: slide 45s linear infinite;
+    -webkit-animation: slide 45s linear infinite;
+    -moz-animation: slide 45s linear infinite;
     animation-delay: -10s;
 }
 
