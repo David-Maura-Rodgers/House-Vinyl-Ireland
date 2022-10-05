@@ -1,0 +1,29 @@
+[{
+    "pk": 1,
+    "model": "products.label",
+    "fields": {
+        "name": "kaoz",
+        "friendly_name": "Kaoz"
+    }
+}, {
+    "pk": 2,
+    "model": "products.label",
+    "fields": {
+        "name": "faith",
+        "friendly_name": "Faith"
+    }
+}, {
+    "pk": 3,
+    "model": "products.label",
+    "fields": {
+        "name": "glitterbox",
+        "friendly_name": "Glitterbox"
+    }
+}, {
+    "pk": 4,
+    "model": "products.label",
+    "fields": {
+        "name": "nugroove",
+        "friendly_name": "NuGroove"
+    }
+}]
