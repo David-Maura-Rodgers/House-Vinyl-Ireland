@@ -12,17 +12,22 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid my-auto">
+    <div class="container-fluid my-auto white-space">
         <div class="row">
             <div class="col-12 text-center mt-2">
                 <h1 class="home-header">
                     House Vinyl Ireland
                 </h1>
             </div>
-            <div class="col-12 text-center mt-1">
-                <h5>
-                    The best selection of House Music on Vinyl in Ireland
-                </h5>
+            <div id="col-12 md-6 info-banner">
+                <div class="col-12 col-6 bg-info text-black" id="scroll-container">
+                    <h4 class="m-0 py-1 text-nowrap" id="scroll">
+                        The best selection of House Music on Vinyl in Ireland
+                        {% for banner in banners %}
+                            {{ banner.info }}
+                        {% endfor %}
+                    </h4>
+                </div>
             </div>
         </div>
     </div>

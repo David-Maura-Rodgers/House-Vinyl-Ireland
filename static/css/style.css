@@ -8,14 +8,67 @@ body {
     font-family: Oswald, sans-serif;
     background-color: rgb(237, 224, 207);
     height: calc(100vh - 164px);
-    /* color: bisque; */
     margin: 0;
     padding: 0;
 }
 
+.white-space {
+    background-color: white;
+}
+
+.header-container {
+    margin-top: -2.45%;
+}
+
+#topnav {
+    background-color: #7ea8d8;
+}
+
 .home-header {
-    /* background-color: white; */
-    color: rgb(18, 12, 6);
+    background: url("/static/images/home-header-vinyl-5.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 15vh;
+    padding: 2%;
+    text-align: center;
+    margin: 0;
+    color: #7ea8d8;
+    border-radius: 25px;
+    border: 3px solid black;
+}
+
+.bg-info {
+    background-color: white !important;
+}
+
+.info-banner {
+    background-color: white !important;
+    width: 200%;
+    background-size:200%;
+    /* position: absolute; */
+}
+
+#scroll-container {
+    /* overflow: hidden; */
+    /* margin-left: 100%; */
+    background-size:200%;
+    position: relative;
+    width: 220vmin;
+}
+
+#scroll {
+    animation: slide 25s linear infinite;
+    -webkit-animation: slide 25s linear infinite;
+    -moz-animation: slide 25s linear infinite;
+    animation-delay: -10s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-105%);
+    }
 }
 
 /* from Bulma */
