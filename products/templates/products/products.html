@@ -29,11 +29,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0 shadow p-3 mb-2 bg-white rounded">
                                 {% if record.image %}
-                                <a href="">
+                                <a href="{% url 'product_detail' record.id %}">
                                     <img class="card-img-top img-fluid" src="{{ record.image.url }}" alt="{{ record.title }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'product_detail' record.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ record.title }}">
                                 </a>
                                 {% endif %}
@@ -43,7 +43,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ record.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">€{{ record.price }}</p>
                                         </div>
                                     </div>
                                 </div>
