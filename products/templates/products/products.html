@@ -21,10 +21,13 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
+                <div class="col-12 text-left">
+                    <p>Showing {{ records|length }} Available Records {% if search_query %}for <strong>{{ search_query }}</strong>{% endif %}</p>
+                </div>
                 <div class="row">
                     {% for record in records %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
+                            <div class="card h-100 border-0 shadow p-3 mb-2 bg-white rounded">
                                 {% if record.image %}
                                 <a href="">
                                     <img class="card-img-top img-fluid" src="{{ record.image.url }}" alt="{{ record.title }}">
