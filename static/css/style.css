@@ -30,12 +30,14 @@ body {
     font-size: 20px;
 }
 
+/* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
 .home-header {
     background: url("/static/images/home-header-vinyl-5.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 20vh;
     padding: 3%;
     font-weight: 900;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
     text-align: center;
     margin-top: 1.5%;
     margin-bottom: 0.020%;
