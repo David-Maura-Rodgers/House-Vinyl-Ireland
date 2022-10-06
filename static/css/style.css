@@ -39,6 +39,16 @@ body {
 
 .bg-info {
     background-color: white !important;
+
+    border-top: #000 3px solid;
+    /* border-top-left-radius: 50px;
+    border-top-right-radius: 50px; */
+    
+    border-bottom: #000 3px solid;
+    /* border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px; */
+
+    margin-top: 0.02%;
 }
 
 #banner-text {
