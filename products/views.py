@@ -7,10 +7,10 @@ def all_products(request):
     A view to display all vinyl records
     '''
 
-    products = Product.objects.all()
+    records = Record.objects.all()
 
     context = {
-        'products': products,
+        'records': records,
     }
 
     return render(request, 'products/products.html', context)

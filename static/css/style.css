@@ -94,10 +94,20 @@ body {
     }
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: rgb(237, 224, 207);
+	z-index: -1;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
-    display: inline-flex;
+    display: block;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
