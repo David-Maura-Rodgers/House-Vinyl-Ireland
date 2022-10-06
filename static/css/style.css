@@ -41,6 +41,11 @@ body {
     background-color: white !important;
 }
 
+#banner-text {
+    font-variant: small-caps;
+    font-family: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+}
+
 .info-banner {
     background-color: white !important;
     width: 200%;
