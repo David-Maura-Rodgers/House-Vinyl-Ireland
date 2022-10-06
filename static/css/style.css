@@ -22,6 +22,12 @@ body {
 
 #topnav {
     background-color: #7ea8d8;
+    justify-content: center;
+    border-bottom: #000 3px solid;
+}
+
+.p-top {
+    font-size: 20px;
 }
 
 .home-header {
@@ -31,7 +37,8 @@ body {
     padding: 3%;
     font-weight: 900;
     text-align: center;
-    margin: 0;
+    margin-top: 1.5%;
+    margin-bottom: 0.020%;
     color: #7ea8d8;
     border-radius: 25px;
     border: 3px solid black;
@@ -48,7 +55,7 @@ body {
     /* border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px; */
 
-    margin-top: 0.02%;
+    margin-top: 0;
 }
 
 #banner-text {
