@@ -33,7 +33,12 @@ class Record(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField(null=True, blank=True)
     stock_quantity = models.IntegerField(default=1)
-    track_list = models.TextField()
+    track_list_1 = models.TextField(default="Track")
+    track_list_2 = models.TextField(default="Track")
+    track_list_3 = models.TextField(default="Track")
+    track_list_4 = models.TextField(default="Track")
+    track_list_5 = models.TextField(default="Track")
+    track_list_6 = models.TextField(default="Track")
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
