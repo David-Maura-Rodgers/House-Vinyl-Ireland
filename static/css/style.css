@@ -6,7 +6,8 @@ html {
 
 body {
     font-family: Oswald, sans-serif;
-    background-color: rgb(237, 224, 207);
+    /* background-color: rgb(237, 224, 207); */
+    background: rgb(238, 231, 221);
     height: calc(100vh - 164px);
     margin: 0;
     padding: 0;
@@ -22,13 +23,14 @@ body {
 
 #topnav {
     background-color: #7ea8d8;
-    justify-content: center;
+    justify-content: right;
     border-bottom: #000 3px solid;
 }
 
 .p-top {
     font-size: 19px;
     font-weight: 900;
+    justify-content: center;
 }
 
 /* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
@@ -101,7 +103,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: rgb(237, 224, 207);
+	background: rgb(238, 231, 221);
 	z-index: -1;
 }
 
