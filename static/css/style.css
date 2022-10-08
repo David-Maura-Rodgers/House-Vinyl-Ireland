@@ -109,13 +109,13 @@ body {
 }
 
 /* from Bulma */
-/* .icon {
+.icon {
     align-items: center;
     display: block;
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
-} */
+}
 
 /* https://stackoverflow.com/questions/57660097/horizontally-and-vertically-center-a-font-awesome-icon-over-an-image */
 .bag {

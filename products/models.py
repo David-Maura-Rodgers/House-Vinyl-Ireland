@@ -25,11 +25,11 @@ class Record(models.Model):
     '''
     Model for the Records database
     '''
+    title = models.CharField(max_length=254)
+    artist = models.CharField(max_length=254)
     label = models.ForeignKey(
         Label, null=True, blank=True, on_delete=models.CASCADE
     )
-    title = models.CharField(max_length=254)
-    artist = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField(null=True, blank=True)
     stock_quantity = models.IntegerField(default=1)
