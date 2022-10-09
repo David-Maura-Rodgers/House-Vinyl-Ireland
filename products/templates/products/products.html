@@ -38,9 +38,9 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0 text-uppercase">{{ record.title }}</p>
+                                    <p class="mb-0 text-uppercase">{{ record.artist }} | {{ record.title }}</p>
                                     <hr>
-                                    <p class="mb-0 fs-1 text-uppercase">LABEL: {{ label.name}}</p>
+                                    <p class="mb-0 fs-1 text-uppercase">LABEL: {{ product.label.friendly_name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
