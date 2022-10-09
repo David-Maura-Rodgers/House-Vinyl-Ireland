@@ -77,9 +77,9 @@
                             <div class="text-center"><i class="fas fa-shopping-bag fa-lg basket"></i>
                                 <p class="my-0 p-top">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                        €{{ grand_total|floatformat:2 }}
                                     {% else %}
-                                        $0.00
+                                        €0.00
                                     {% endif %}
                                 </p>
                             </div>
