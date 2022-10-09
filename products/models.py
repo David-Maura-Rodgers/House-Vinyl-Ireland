@@ -6,13 +6,13 @@ class Label(models.Model):
     Model for Labels which each record record is released on
     '''
     name = models.CharField(max_length=150)
-    friendly_name = models.CharField(max_length=150, null=True, blank=True)
+    friendly_name = models.CharField(max_length=150, default="1")
 
     def __str__(self):
         '''
         Override default str method
         '''
-        return self.label
+        return self.name
 
     def get_friendly_name(self):
         '''
@@ -26,7 +26,7 @@ class Record(models.Model):
     Model for the Records database
     '''
     label = models.ForeignKey(
-        'Label', null=True, blank=True, on_delete=models.CASCADE
+        Label, null=True, blank=True, on_delete=models.SET_NULL
     )
     title = models.CharField(max_length=254)
     artist = models.CharField(max_length=254)
