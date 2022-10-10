@@ -45,7 +45,7 @@
 <li class="list-inline-item">
     <a class="{% if grand_total %} text-white bg-dark {% else %} text-black {% endif %} nav-link d-block d-lg-none" 
         href="{% url 'view_basket' %}">
-        <div class="text-center"><i class="fas fa-shopping-bag fa-lg"></i>
+        <div class="borderBlink text-center"><i class="fas fa-shopping-bag fa-lg"></i>
             <p class="my-0">
                 {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}
