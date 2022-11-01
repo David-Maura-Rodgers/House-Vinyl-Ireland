@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -78,7 +79,7 @@
                                             data-size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.record.price }}</p>
+                                        <p class="my-0">${{ item.record.price | calc_subtotal:item.quantity  }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}

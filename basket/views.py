@@ -34,14 +34,16 @@ def adjust_basket(request, item_id):
     Adjust the quantity of the specified product to the specified amount
     '''
 
-    if request.method == 'POST':
-        product = get_object_or_404(Record, pk=item_id)
-        quantity = request.POST.get('quantity')
-        basket = request.session.get('basket', {})
-        basket[item_id] = int(quantity)
+    quantity = int(request.POST.get('quantity'))
+    basket = request.session.get('basket', {})
 
-        return redirect(reverse('view_basket'))
-        return redirect(redirect_url)
+    if quantity > 0:
+        basket[item_id] = quantity
+    else:
+        basket.pop(item_id)
+
+    request.session['basket'] = basket
+    return redirect(reverse('view_basket'))
 
 
 def remove_item(request, item_id):
