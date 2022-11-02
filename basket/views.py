@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.shortcuts import HttpResponse
+from django.contrib import messages
+
 from products.models import Record
 
 
@@ -24,6 +26,7 @@ def add_to_basket(request, item_id):
         basket[item_id] += quantity
     else:
         basket[item_id] = quantity
+        messages.success(request, f'Added {record.name} to your bag')
 
     request.session['basket'] = basket
     return redirect(redirect_url)
