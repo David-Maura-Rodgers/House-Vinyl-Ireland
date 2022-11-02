@@ -17,7 +17,7 @@ def add_to_basket(request, item_id):
     '''
     Add a quantity of the specified product/record to the shopping basket
     '''
-    product = get_object_or_404(Record, pk=item_id)
+    record = get_object_or_404(Record, pk=item_id)
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
     quantity = 1
@@ -26,7 +26,7 @@ def add_to_basket(request, item_id):
         basket[item_id] += quantity
     else:
         basket[item_id] = quantity
-        messages.success(request, f'Added {record.name} to your bag')
+        messages.success(request, f'Added {record.title} to your bag')
 
     request.session['basket'] = basket
     return redirect(redirect_url)
