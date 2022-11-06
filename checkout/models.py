@@ -4,7 +4,7 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 
-from products.models import Product
+from products.models import Record
 
 
 class Order(models.Model):
@@ -38,7 +38,7 @@ class Order(models.Model):
         '''
         Order purchases by date
         '''
-        ordering = ['-purchase_date']
+        ordering = ['-date']
 
     # prepend _ is used to declare this method is private to this class
     def _generate_order_number(self):
@@ -81,9 +81,22 @@ class ItemCheckout(models.Model):
         related_name='itemcheckout'
     )
     record = models.ForeignKey(
-        Products, null=False, blank=False, on_delete=models.CASCADE
+        Record, null=False, blank=False, on_delete=models.CASCADE
     )
     quantity = models.IntegerField(null=False, blank=False, default=0)
     item_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, blank=False, editable=False
     )
+
+    def save(self, *args, **kwargs):
+        '''
+        Override save to set the item total
+        and update the subtotal value
+        '''
+
+        self.item_total = self.record.price * self.quantity
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Name: {self.record.title} on order \
+            {self.order.order_number}'
