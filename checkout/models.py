@@ -24,6 +24,9 @@ class Order(models.Model):
     postcode = models.CharField(max_length=20, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
+    delivery_cost = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0
+    )
     order_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0
     )
@@ -43,6 +46,17 @@ class Order(models.Model):
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper
+
+    def calc_total(self):
+        '''
+        Update grand total each time a new item is added
+        '''
+
+        self.subtotal = self.itemcheckout.aggregate(
+            Sum('item_total'))['item_total__sum'] or 0
+        self.delivery_cost = self.order_total * settings.DELIVERY_PERCENTAGE / 100  # noqa
+        self.grand_total = self.order_total + self.delivery_cost
+        self.save()
 
     def save(self, *args, **kwargs):
         '''
@@ -64,7 +78,7 @@ class ItemCheckout(models.Model):
 
     order = models.ForeignKey(
         Order, null=False, blank=False, on_delete=models.CASCADE,
-        related_name='purchaseitems'
+        related_name='itemcheckout'
     )
     record = models.ForeignKey(
         Products, null=False, blank=False, on_delete=models.CASCADE
