@@ -91,7 +91,7 @@ class ItemCheckout(models.Model):
     def save(self, *args, **kwargs):
         '''
         Override save to set the item total
-        and update the subtotal value
+        and update the order total value
         '''
 
         self.item_total = self.record.price * self.quantity
