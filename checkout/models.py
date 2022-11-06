@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 
 from products.models import Product
@@ -6,7 +8,9 @@ from products.models import Product
 class Order(models.Model):
     '''
     Model for customer record purchases
+    Captures the order info and generates a a random, unique order number
     '''
+
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -23,4 +27,22 @@ class Order(models.Model):
     )
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0
+    )
+
+
+class ItemCheckout(models.Model):
+    '''
+    Items to be checked out for purchase
+    '''
+
+    order = models.ForeignKey(
+        Order, null=False, blank=False, on_delete=models.CASCADE,
+        related_name='purchaseitems'
+    )
+    record = models.ForeignKey(
+        Products, null=False, blank=False, on_delete=models.CASCADE
+    )
+    quantity = models.IntegerField(null=False, blank=False, default=0)
+    item_total = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, blank=False, editable=False
     )
