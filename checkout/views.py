@@ -38,7 +38,7 @@ def checkout(request):
             order = order_form.save()
             for item_id, item_data in basket.items():
                 try:
-                    record = Product.objects.get(id=item_id)
+                    record = Record.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         item_checkout = ItemCheckout(
                             order=order,
