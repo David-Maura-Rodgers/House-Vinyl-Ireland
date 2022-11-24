@@ -13,7 +13,8 @@ class OrderAdmin(admin.ModelAdmin):
     # had to remove 'original_basket', 'stripe_pid'
     readonly_fields = ('order_number', 'date',
                        'delivery_cost', 'order_total',
-                       'grand_total',)
+                       'grand_total', 'original_basket',
+                       'stripe_pid',)
 
     fields = ('order_number', 'date', 'full_name',
               'email', 'phone_number', 'country',
