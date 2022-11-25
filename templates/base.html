@@ -17,7 +17,7 @@
                 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@200;300&family=Roboto+Condensed:wght@300&display=swap"
                 rel="stylesheet">
-            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
        
         {% block extra_css %}
@@ -73,7 +73,7 @@
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item">Store Management</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>

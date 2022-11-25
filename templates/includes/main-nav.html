@@ -8,49 +8,25 @@
             </a>
         </li>
 
+        <li class="nav-item nav-font">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" aria-haspopup="true" aria-expanded="false" 
+                href="{% url 'products' %}">
+                All Vinyl
+            </a>
+        </li>
+
         <li class="nav-item dropdown nav-font">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}" id="all-products-link" 
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Browse Vinyl
+                Browse Label
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-                <a href="" class="dropdown-item">By Label</a>
-                <a href="" class="dropdown-item ">By Artist</a>
+                <a href="" class="dropdown-item">Kaoz</a>
+                <a href="" class="dropdown-item ">Faith</a>
+                <a href="" class="dropdown-item ">Glitterbox</a>
+                <a href="" class="dropdown-item ">NuGroove</a>
             </div>
         </li>
-        
-        {% if request.user.is_authenticated %}
-            <li class="nav-item nav-font">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
-                    aria-haspopup="true" aria-expanded="false" href="">Profile</a>
-            </li>
-            <li class="nav-item nav-font">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
-                    aria-haspopup="true" aria-expanded="false" href="{% url 'account_logout' %}">Sign Out</a>
-            </li>
-        
-        {% if request.user.is_superuser %}
-            <li class="nav-item nav-font">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="" id="all-products-link" 
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="">Shop Management</a>
-            </li>
-            <!-- <li class="nav-item nav-font">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
-                    aria-haspopup="true" aria-expanded="false" href="">Admin</a>
-            </li> -->
-        {% endif %}
-        
-        {% else %}
-            <li class="nav-item nav-font">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" 
-                    aria-haspopup="true" aria-expanded="false" href="{% url 'account_signup' %}">Register</a>
-            </li>
-            <li class="nav-item nav-font">
-                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" 
-                    aria-haspopup="true" aria-expanded="false" href="{% url 'account_login' %}">Log In</a>
-            </li>
-        {% endif %}
     
         <li class="nav-item nav-font">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" aria-haspopup="true" 
