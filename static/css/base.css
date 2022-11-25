@@ -36,9 +36,9 @@ body {
 
 /* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
 .home-header {
-    background: url("/static/images/home-header-vinyl-2.jpg") no-repeat center center fixed;
+    background: url("/static/images/home-header-vinyl-4.jpg") no-repeat center center fixed;
     background-size: cover;
-    height: 50vh;
+    height: 55vh;
     max-width: 100vw;
     margin-left: 0.05%;
     font-weight: 900;
