@@ -57,8 +57,8 @@
                                     <td>
                                         <ul class="list-unstyled">
                                             {% for item in order.itemcheckout.all %}
-                                                <li class="small">
-                                                    {{ item.product.name }} x {{ item.quantity }}
+                                                <li class="medium">
+                                                    {{ item.record.title }} x {{ item.quantity }}
                                                 </li>
                                             {% endfor %}
                                         </ul>
