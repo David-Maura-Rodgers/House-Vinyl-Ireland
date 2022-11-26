@@ -170,9 +170,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Stripe variables
 DELIVERY_PERCENTAGE = 4
 STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = 'pk_test_51LgshSHe5KRL462YAIYqkoji9NbTTaw0tVvamFWc6WnpiX6fCJ1SnGxKkEqcOwDwY8aksYJ1PqYOpJRsiiqzoSuD00fPjLY22O'
-STRIPE_SECRET_KEY = 'sk_test_51LgshSHe5KRL462Y98KBxbQOwOIEUVcVdidNe8xE5S12EehwV26CbYg6MYEg7D2YuhcW6j2snmrrViN9z1hQXqpc00dbl4po3I'
-STRIPE_WH_SECRET = 'whsec_jCAAa88D1yBFtoZPuhir8yB19SSf5By1'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+DEFAULT_FROM_EMAIL = 'housevinylireland@example.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
