@@ -21,12 +21,18 @@ body {
 }
 
 #topnav {
-    background-color: #5590d4;
+    /* background-color: #5590d4; */
+    /* background-color: #96b50c; */
+    background-color: #29eb0ba4;;
     justify-content: center;
     border-bottom: #000 3px solid;
 }
 
-.p-top {
+#main-nav {
+    background-color: rgba(239, 181, 32, 0.893);
+}
+
+.p-nav {
     font-size: 19px;
     font-weight: 900;
     padding-top: -20%;
@@ -37,17 +43,17 @@ body {
 .home-image {
     background: url("/static/images/home-header-vinyl-4.jpg") no-repeat center center fixed;
     background-size: cover;
-    height: 55vh;
+    height: 52vh;
     border-radius: 25px;
-    border: 3px solid #5590d4;
+    border: 4px solid #5590d4;
 }
 
 .home-header {
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     /* color: #7ea8d8;  */
     color: #5590d4;
-    border-top: #96b50c;
-    border-top-style:groove;
+    /* color: #20c107; */
+    border-top: groove 3px #96b50c;
 }
 
 .home-text {
@@ -83,6 +89,7 @@ body {
     background-size:200%;
     overflow: hidden;
     width: 200vmin;
+    margin-top: 0.75%;
 }
 
 #scroll {

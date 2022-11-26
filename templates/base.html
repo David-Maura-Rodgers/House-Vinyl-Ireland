@@ -65,7 +65,7 @@
                             aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg mt-1 mb-1"></i></div>
-                                <p class="my-0 p-top">My Account</p>
+                                <p class="my-0 p-nav">My Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -85,7 +85,7 @@
                         <a class="{% if grand_total %} text-white bg-dark {% else %}text-black{% endif %} nav-link" 
                             href="{% url 'view_basket' %}">
                             <div class="text-center"><i class="fas fa-shopping-bag fa-lg basket"></i>
-                                <p class="my-0 p-top">
+                                <p class="my-0 p-nav">
                                     {% if grand_total %}
                                         €{{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -97,8 +97,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="row bg-white">
-                <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <div class="row" id="main-nav">
+                <nav class="navbar navbar-expand-lg navbar-light w-100" id="main-nav">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
