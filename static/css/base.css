@@ -34,19 +34,24 @@ body {
 }
 
 /* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
-.home-header {
+.home-image {
     background: url("/static/images/home-header-vinyl-4.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 55vh;
-    width: 50%;
-    margin-left: 0.05%;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    text-align: left;
-    /* color: #7ea8d8; */
-    color: #5590d4;
     border-radius: 25px;
-    border: 3px solid black;
+    border: 3px solid #5590d4;
+}
+
+.home-header {
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    /* color: #7ea8d8;  */
+    color: #5590d4;
+    border-top: #96b50c;
+    border-top-style:groove;
+}
+
+.home-text {
+    margin: 0 2% 1% 2%;
 }
 
 .bg-info {
