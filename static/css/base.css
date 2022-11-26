@@ -23,13 +23,13 @@ body {
 #topnav {
     /* background-color: #5590d4; */
     /* background-color: #96b50c; */
-    background-color: #29eb0ba4;;
+    background-color: #6cd45c;;
     justify-content: center;
     border-bottom: #000 3px solid;
 }
 
 #main-nav {
-    background-color: rgba(239, 181, 32, 0.893);
+    background-color: rgb(246, 201, 118);
 }
 
 .p-nav {
@@ -79,16 +79,16 @@ body {
     font-family: Kanit, sans-serif;
 }
 
-.info-banner {
+/* .info-banner {
     background-color: black !important;
     width: 200%;
     background-size:200%;
-}
+} */
 
 #scroll-container {
     background-size:200%;
     overflow: hidden;
-    width: 200vmin;
+    width: 100%;
     margin-top: 0.75%;
 }
 
