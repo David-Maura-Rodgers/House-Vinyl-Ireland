@@ -22,17 +22,17 @@
         </div>
 
         <div class="row">
-            <div class="col">
+            <div class="col-8">
                 {% if basket_items %}
                     <div class="table-responsive rounded">
                         <table class="table table-sm table-borderless">
-                            <thead class="text-black">
+                            <thead class="text-white font-weight-normal">
                                 <tr>
-                                    <th class="text-white" scope="col">Record Info</th>
-                                    <th class="text-white" scope="col"></th>
-                                    <th class="text-white" scope="col">Price</th>
-                                    <th class="text-white" scope="col">Qty</th>
-                                    <th class="text-white" scope="col">Subtotal</th>
+                                    <th class="text-white font-weight-normal" scope="col">Record Info</th>
+                                    <th class="text-white font-weight-normal" scope="col"></th>
+                                    <th class="text-white font-weight-normal" scope="col">Price</th>
+                                    <th class="text-white font-weight-normal" scope="col">Qty</th>
+                                    <th class="text-white font-weight-normal" scope="col">Subtotal</th>
                                 </tr>
                             </thead>
 
@@ -48,23 +48,27 @@
                                         <p class="my-0 text-white">${{ item.record.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
+                                        <form class="form update-form" method="POST" 
+                                        action="{% url 'adjust_basket' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <button class="decrement-qty btn btn-smn btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                            data-item_id="{{ item.item_id }}" 
+                                                            id="decrement-qty_{{ item.item_id }}">
                                                             <span class="text-white">
                                                                 <i class="fas fa-minus fa-sm"></i>
                                                             </span>
                                                         </button>
                                                     </div>
                                                     <input class="form-control qty_input" type="number" name="quantity" value="1" 
-                                                        min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                        min="1" max="99" data-item_id="{{ item.item_id }}" 
+                                                        id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btn-smn btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                            data-item_id="{{ item.item_id }}" 
+                                                            id="increment-qty_{{ item.item_id }}">
                                                             <span class="text-white">
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
@@ -73,38 +77,15 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="update-link text-info">Update</a>
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" 
-                                            data-size="{{ item.size }}"><small>Remove</small></a>
+                                            data-size="{{ item.size }}">Remove</a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0 text-white">${{ item.record.price | calc_subtotal:item.quantity  }}</p>
+                                        <p class="my-0 text-white">${{ item.record.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    <h6 class="text-white">Basket Total: ${{ total|floatformat:2 }}</h6>
-                                    <h6 class="text-white">Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4 text-white">Grand Total: ${{ grand_total|floatformat:2 }}</h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase text-white">Secure Checkout</span>
-                                        <span class="icon text-white">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
                         </table>
                     </div>
                 {% else %}
@@ -116,6 +97,31 @@
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
                 {% endif %}
+            </div>
+            <div class="col-3">
+                <tr>
+                    <td class="pt-2">
+                        <h6 class="text-white">Basket Total: ${{ total|floatformat:2 }}</h6>
+                        <h6 class="text-white">Delivery: ${{ delivery|floatformat:2 }}</h6>
+                        <h4 class="mt-2 text-white">Grand Total: ${{ grand_total|floatformat:2 }}</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                            <span class="text-uppercase text-white">Secure Checkout</span>
+                            <span class="icon text-white">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
             </div>
         </div>
     </div>
