@@ -4,17 +4,17 @@
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
-            <div class="col"></div>
+            <div class="col">
+            </div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-4">
-                <h2 class="logo-font">Records</h2>
+                <h2 class="font-weight-normal text-white">Records</h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -22,7 +22,8 @@
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
                 <div class="col-12 text-left">
-                    <p>Showing {{ records|length }} Available Records {% if search_query %}for <strong>{{ search_query }}</strong>{% endif %}</p>
+                    <p class="font-weight-normal text-white">Showing {{ records|length }} 
+                        Available Records {% if search_query %}for <strong>{{ search_query }}</strong>{% endif %}</p>
                 </div>
                 <div class="row">
                     {% for record in records %}
