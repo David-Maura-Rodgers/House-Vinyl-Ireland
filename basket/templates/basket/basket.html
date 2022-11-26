@@ -84,9 +84,9 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6 class="text-white"><strong>Basket Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6 class="text-white">Basket Total: ${{ total|floatformat:2 }}</h6>
                                     <h6 class="text-white">Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4 text-white"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <h4 class="mt-4 text-white">Grand Total: ${{ grand_total|floatformat:2 }}</h4>
                                 </td>
                             </tr>
                             <tr>
@@ -110,10 +110,10 @@
                 {% else %}
                     <p class="lead mb-5 text-white">Your basket is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon text-white">
+                        <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase text-white">Keep Shopping</span>
+                        <span class="text-uppercase">Keep Shopping</span>
                     </a>
                 {% endif %}
             </div>

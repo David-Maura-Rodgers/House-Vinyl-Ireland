@@ -6,8 +6,6 @@ html {
 
 body {
     font-family: Kanit, sans-serif;
-    /* background-color: rgb(237, 224, 207); */
-    /* background: rgb(238, 231, 221); */
     background: rgba(0, 0, 0, 0.874);
     height: calc(100vh - 164px);
     margin: 0;
@@ -67,7 +65,7 @@ body {
 
 #banner-text {
     font-variant: small-caps;
-    font-family: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald:wght@500&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+    font-family: Kanit, sans-serif;
 }
 
 .info-banner {
@@ -77,10 +75,9 @@ body {
 }
 
 #scroll-container {
-    color: black;
     background-size:200%;
-    position: relative;
-    width: 220vmin;
+    overflow: hidden;
+    width: 200vmin;
 }
 
 #scroll {
@@ -97,16 +94,6 @@ body {
     100% {
         transform: translateX(-105%);
     }
-}
-
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: rgb(238, 231, 221);
-	z-index: -1;
 }
 
 /* from Bulma */
