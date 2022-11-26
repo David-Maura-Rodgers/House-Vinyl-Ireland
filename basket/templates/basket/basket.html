@@ -12,12 +12,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
     <div class="container mb-2">
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Your Basket</h2>
+                <h2 class="logo-font mb-4 text-white">Your Basket</h2>
                 <hr>
             </div>
         </div>
@@ -29,11 +28,11 @@
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
-                                    <th scope="col">Record Info</th>
-                                    <th scope="col"></th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th class="text-white" scope="col">Record Info</th>
+                                    <th class="text-white" scope="col"></th>
+                                    <th class="text-white" scope="col">Price</th>
+                                    <th class="text-white" scope="col">Qty</th>
+                                    <th class="text-white" scope="col">Subtotal</th>
                                 </tr>
                             </thead>
 
@@ -43,10 +42,10 @@
                                         <img class="img-fluid rounded" src="{{ item.record.image.url }}">
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.record.name }}</strong></p>
+                                        <p class="my-0 text-white"><strong>{{ item.record.name }}</strong></p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.record.price }}</p>
+                                        <p class="my-0 text-white">${{ item.record.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
@@ -56,7 +55,7 @@
                                                     <div class="input-group-prepend">
                                                         <button class="decrement-qty btn btn-smn btn-black rounded-0" 
                                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                            <span>
+                                                            <span class="text-white">
                                                                 <i class="fas fa-minus fa-sm"></i>
                                                             </span>
                                                         </button>
@@ -66,7 +65,7 @@
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btn-smn btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
+                                                            <span class="text-white">
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
                                                         </button>
@@ -79,15 +78,15 @@
                                             data-size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.record.price | calc_subtotal:item.quantity  }}</p>
+                                        <p class="my-0 text-white">${{ item.record.price | calc_subtotal:item.quantity  }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Basket Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    <h6 class="text-white"><strong>Basket Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6 class="text-white">Delivery: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4 text-white"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
                             <tr>
@@ -99,8 +98,8 @@
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
                                     <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
+                                        <span class="text-uppercase text-white">Secure Checkout</span>
+                                        <span class="icon text-white">
                                             <i class="fas fa-lock"></i>
                                         </span>
                                     </a>
@@ -109,12 +108,12 @@
                         </table>
                     </div>
                 {% else %}
-                    <p class="lead mb-5">Your basket is empty.</p>
+                    <p class="lead mb-5 text-white">Your basket is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
+                        <span class="icon text-white">
                             <i class="fas fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase">Keep Shopping</span>
+                        <span class="text-uppercase text-white">Keep Shopping</span>
                     </a>
                 {% endif %}
             </div>
