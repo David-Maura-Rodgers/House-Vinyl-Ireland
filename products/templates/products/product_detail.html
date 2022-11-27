@@ -50,6 +50,14 @@
                         value="Add to Basket">
                 </div>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <div class="col-4">
+                    {% if request.user.is_superuser %}
+                        <article class="mt-5 ml-5 border text-center">
+                            <a href="{% url 'edit_product' record.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' record.id %}">Delete</a>
+                        </article>
+                    {% endif %}
+                </div>
             </div>
         </form>
         <div class="row">
@@ -112,7 +120,6 @@
                     </table>
                 </div>
             </div>
-            <!-- form to add products to the basket -->
         </div>
     </div>
 {% endblock %}
