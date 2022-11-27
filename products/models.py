@@ -5,8 +5,12 @@ class Label(models.Model):
     '''
     Model for Labels which each record is released on
     '''
-    name = models.CharField(max_length=150)
-    friendly_name = models.CharField(max_length=150, default="1")
+
+    class Meta:
+        verbose_name_plural = 'Labels'
+
+    label = models.CharField(max_length=150)
+    friendly_name = models.CharField(max_length=254)
 
     def __str__(self):
         '''
@@ -26,7 +30,7 @@ class Record(models.Model):
     Model for the Records database
     '''
     label = models.ForeignKey(
-        Label, null=True, blank=True, on_delete=models.SET_NULL
+        'Label', Label, default=False,
     )
     title = models.CharField(max_length=254)
     artist = models.CharField(max_length=254)
