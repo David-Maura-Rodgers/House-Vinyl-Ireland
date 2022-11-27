@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
 from django.db.models import Q
+
 from .models import Record, Label
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -53,3 +55,17 @@ def product_detail(request, record_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    '''
+    Allow superuser/admin to add a product to the store
+    '''
+
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
