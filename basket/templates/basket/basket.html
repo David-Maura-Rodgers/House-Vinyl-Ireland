@@ -22,76 +22,89 @@
         </div>
 
         <div class="row">
-            <div class="col-8">
+            <div class="col">
                 {% if basket_items %}
-                    <div class="table-responsive rounded">
+                    <div class="d-block d-md-none">
+                        <div class="row">
+                            <div class="col">
+                                {% include "basket/basket-total.html" %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                {% include "basket/checkout-buttons.html" %}
+                                <p class="text-white mb-5">A summary of your basket contents is below</p>
+                            </div>
+                        </div>
+                        {% for item in basket_items %}
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "basket/product-image.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 mb-2">
+                                    {% include "basket/product-info.html" %}
+                                </div>
+                                <div class="col-12 col-sm-6 order-sm-last">
+                                    <p class="my-0 text-white">Price Each: {{ item.record.price }}</p>
+                                    <p class="text-white">Subtotal: {{ item.record.price | calc_subtotal:item.quantity }}</p>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {% include "basket/quantity-form.html" %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <hr>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="btt-button shadow-sm rounded-0 border border-black">
+                            <a class="btt-link d-flex h-100">
+                                <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+                            </a>	
+                        </div>
+                    </div>
+                    <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm table-borderless">
-                            <thead class="text-white font-weight-normal">
+                            <thead class="text-white">
                                 <tr>
-                                    <th class="text-white font-weight-normal" scope="col">Record Info</th>
-                                    <th class="text-white font-weight-normal" scope="col"></th>
-                                    <th class="text-white font-weight-normal" scope="col">Price</th>
-                                    <th class="text-white font-weight-normal" scope="col">Qty</th>
-                                    <th class="text-white font-weight-normal" scope="col">Subtotal</th>
+                                    <th scope="col" class="font-weight-normal">Record Info</th>
+                                    <th scope="col" class="font-weight-normal"></th>
+                                    <th scope="col" class="font-weight-normal">Price</th>
+                                    <th scope="col" class="font-weight-normal">Qty</th>
+                                    <th scope="col" class="font-weight-normal">Subtotal</th>
                                 </tr>
                             </thead>
 
                             {% for item in basket_items %}
                                 <tr>
                                     <td class="p-3 w-25">
-                                        {% if item.record.image %}
-                                        <img class="img-fluid rounded" src="{{ item.record.image.url }}" 
-                                            alt="{{ item.record.title }}">
-                                        {% else %}
-                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" 
-                                            alt="{{ item.record.title }}">
-                                        {% endif %}
+                                        {% include "basket/product-image.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0 text-white"><strong>{{ item.record.name }}</strong></p>
+                                        {% include "basket/product-info.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0 text-white">${{ item.record.price }}</p>
+                                        <p class="my-0 text-white">{{ item.record.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" 
-                                        action="{% url 'adjust_basket' item.item_id %}">
-                                            {% csrf_token %}
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-smn btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" 
-                                                            id="decrement-qty_{{ item.item_id }}">
-                                                            <span class="text-white">
-                                                                <i class="fas fa-minus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    <input class="form-control qty_input" type="number" name="quantity" value="1" 
-                                                        min="1" max="99" data-item_id="{{ item.item_id }}" 
-                                                        id="id_qty_{{ item.item_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-smn btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" 
-                                                            id="increment-qty_{{ item.item_id }}">
-                                                            <span class="text-white">
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="update-link text-info">Update</a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" 
-                                            data-size="{{ item.size }}">Remove</a>
+                                        {% include "basket/quantity-form.html" %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0 text-white">${{ item.record.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0 text-white">{{ item.record.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    {% include "basket/basket-total.html" %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    {% include "basket/checkout-buttons.html" %}
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 {% else %}
@@ -104,37 +117,17 @@
                     </a>
                 {% endif %}
             </div>
-            <div class="col-4">
-                <tr>
-                    <td class="pt-2">
-                        <h6 class="text-white">Basket Total: ${{ total|floatformat:2 }}</h6>
-                        <h6 class="text-white">Delivery: ${{ delivery|floatformat:2 }}</h6>
-                        <h4 class="mt-2 text-white">Grand Total: ${{ grand_total|floatformat:2 }}</h4>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                        <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                            <span class="text-uppercase text-white">Secure Checkout</span>
-                            <span class="icon text-white">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                        </a>
-                    </td>
-                </tr>
-            </div>
         </div>
     </div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
 {% include 'products/includes/quantity_input_script.html' %}
 
 <script type="text/javascript">
@@ -157,5 +150,4 @@
          });
     })
 </script>
-
 {% endblock %}
