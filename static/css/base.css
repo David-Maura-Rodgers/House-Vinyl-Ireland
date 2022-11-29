@@ -10,7 +10,7 @@ body {
     /* letter-spacing: 0.5px;
     text-transform: none; */
     /* background: rgba(0, 0, 0, 0.874); */
-    background: rgb(71, 70, 70);
+    background: rgb(76, 75, 75);
     height: calc(100vh - 164px);
     margin: 0;
     padding: 0;
@@ -54,6 +54,7 @@ body {
 
 .home-text {
     margin: 0 2% 1% 2%;
+    font-variant:initial;
 }
 
 .bg-info {
@@ -92,7 +93,6 @@ body {
 */
 
 #scroll-container {
-    font-family: Bebas Neue, sans-serif;
     background-size:200%;
     overflow: hidden;
     width: 100%;

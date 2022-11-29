@@ -65,7 +65,9 @@ class Order(models.Model):
 
         self.subtotal = self.itemcheckout.aggregate(
             Sum('item_total'))['item_total__sum'] or 0
-        self.delivery_cost = self.order_total * settings.DELIVERY_PERCENTAGE / 100  # noqa
+        self.delivery_cost = (
+            self.order_total * settings.DELIVERY_PERCENTAGE / 100
+        )
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
