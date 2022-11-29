@@ -1,25 +1,19 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
+    <ul class="navbar-nav ml-auto w-auto mx-auto">
 
+        <!-- Links available to all visitors -->
         <li class="nav-item nav-font">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" aria-haspopup="true" aria-expanded="false" 
-                href="{% url 'home' %}">
-                Home
-            </a>
+            <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}" aria-label="link to home page">
+            <span class="span-nav">Home</a></span> 
         </li>
-
         <li class="nav-item nav-font">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" aria-haspopup="true" aria-expanded="false" 
-                href="{% url 'products' %}">
-                All Vinyl
-            </a>
+            <a class="nav-link text-black font-weight-bold" href="{% url 'products' %}" aria-label="link to records page">
+            <span class="span-nav">All Vinyl</a></span>
         </li>
-
         <li class="nav-item dropdown nav-font">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}" id="all-products-link" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Browse Label
-            </a>
+            <a class="nav-link text-black font-weight-bold" href="{% url 'products' %}" aria-label="link to records page"
+            id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="span-nav">Browse Label</a></span>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="" class="dropdown-item">Kaoz</a>
                 <a href="" class="dropdown-item ">Faith</a>
@@ -27,11 +21,84 @@
                 <a href="" class="dropdown-item ">NuGroove</a>
             </div>
         </li>
-    
-        <li class="nav-item nav-font">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" aria-haspopup="true" 
-                aria-expanded="false" href="">Contact Us</a>
+        
+        <!-- Links are shown only to authenticated user -->
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}" aria-label="link to user profile page">
+            <span class="span-nav">Profile</a></span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="" aria-label="link to reviews page">
+            <span class="span-nav">Record Reviews</a></span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}" aria-label="link to sign out">
+            <span class="span-nav">Sign Out</a></span>        
         </li>
 
+        <!-- Shown only for admin users -->
+        {% if request.user.is_superuser %}
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'add_product' %}" aria-label="link to add product page">
+            <span class="span-nav">Store Management</a></span>
+        </li>
+        {% endif %}
+
+        <!-- Links shown if user is not signed in -->
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'account_login' %}" aria-label="link to sign in page">
+            <span class="span-nav">Sign In</a></span>
+            
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'account_signup' %}" aria-label="link to sign up page">
+            <span class="span-nav">Register</a></span>
+        </li>
+        {% endif %}
+
+        <!-- Links available to all visitors -->
+        <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="" aria-label="link to contact us page">
+            <span class="span-nav">Contact Us</a></span>
+        </li>
+        <ul class="list-inline list-unstyled text-center text-lg-right">
+            <li class="list-inline-item dropdown">
+                <a class="nav-link text-black font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="fas fa-user fa-lg mt-1 mb-1"></i></div>
+                        <span class="span-nav">My Account</span>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'add_product' %}" class="dropdown-item">Store Management</a>
+                        {% endif %}
+                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                    {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+            </li>
+            <li class="borderBlink list-inline-item">
+                <a class="{% if grand_total %} text-white bg-dark {% else %}text-black{% endif %} nav-link" 
+                    href="{% url 'view_basket' %}">
+                    <div class="text-center"><i class="fas fa-shopping-bag fa-lg basket"></i>
+                        <span class="span-nav">
+                            {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                            {% else %}
+                                €0.00
+                            {% endif %}
+                        </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </ul>
 </div>
