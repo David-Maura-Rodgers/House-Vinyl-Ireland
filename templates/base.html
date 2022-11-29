@@ -44,45 +44,6 @@
     </head>
     <body>
         <header class="container-fluid fixed-top">
-            <!-- <div id="topnav" class="row d-flex justify-content-center d-none d-lg-flex">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg mt-1 mb-1"></i></div>
-                                <p class="my-0 p-nav">My Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Store Management</a>
-                                {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="borderBlink list-inline-item">
-                        <a class="{% if grand_total %} text-white bg-dark {% else %}text-black{% endif %} nav-link" 
-                            href="{% url 'view_basket' %}">
-                            <div class="text-center"><i class="fas fa-shopping-bag fa-lg basket"></i>
-                                <p class="my-0 p-nav">
-                                    {% if grand_total %}
-                                        €{{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        €0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
             <div class="row" id="main-nav">
                 <nav class="navbar navbar-expand-lg navbar-light w-100" id="main-nav">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" 
@@ -92,6 +53,19 @@
                     {% include 'includes/main-nav.html' %}
                 </nav>
             </div>
+            <form class="form" method="GET" action="{% url 'products' %}">
+                <div class="input-group w-50 mx-auto">
+                    <input class="form-control border border-black rounded-0" type="text" name="q" 
+                        placeholder="Search our site for available Vinyl . . .">
+                    <div class="input-group-append">
+                        <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+                            <span class=" text-white icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </header>
 
         {% if messages %}
@@ -110,7 +84,7 @@
                 {% endwith %}
             {% endfor %}
         </div>
-    {% endif %}
+        {% endif %}
 
         {% block page_header %}
         {% endblock %}
