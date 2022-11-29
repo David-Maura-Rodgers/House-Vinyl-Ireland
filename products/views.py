@@ -38,7 +38,7 @@ def all_products(request):
     context = {
         'records': records,
         'search_term': query,
-        'current_labels': labels,
+        'labels': labels,
     }
 
     return render(request, 'products/products.html', context)
