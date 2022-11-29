@@ -1,40 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
 html {
     height: 100%;
 }
 
 body {
-    font-family: Kanit, sans-serif;
-    background: rgba(0, 0, 0, 0.874);
+    font-family: 'Squada One', sans-serif;
+    font-size: 20px;
+    /* letter-spacing: 0.5px;
+    text-transform: none; */
+    /* background: rgba(0, 0, 0, 0.874); */
+    background: rgb(71, 70, 70);
     height: calc(100vh - 164px);
     margin: 0;
     padding: 0;
 }
 
-.white-space {
-    background-color: white;
-}
-
-.header-container {
-    margin-top: -2.45%;
-}
-
-#topnav {
-    /* background-color: #5590d4; */
-    /* background-color: #96b50c; */
-    background-color: #6cd45c;;
-    justify-content: center;
-    border-bottom: #000 3px solid;
-}
-
 #main-nav {
-    background-color: rgb(246, 201, 118);
+    background-color: rgb(170, 222, 121);
+}
+
+.nav-item {
+    text-transform: uppercase;
 }
 
 .span-nav {
     font-size: 20px;
     justify-content: center;
+}
+
+.header-container {
+    margin-top: -2.45%;
 }
 
 /* https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text */
@@ -43,15 +39,17 @@ body {
     background-size: cover;
     height: 52vh;
     border-radius: 25px;
-    border: 4px solid #5590d4;
+    /* border: 4px solid #5590d4; */
+    border: 4px solid #f6a312;
 }
 
 .home-header {
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
     /* color: #7ea8d8;  */
-    color: #5590d4;
+    /* color: #5590d4; */
+    color: #96b50c;
     /* color: #20c107; */
-    border-top: groove 3px #96b50c;
+    border-top: groove 5px #f6a312;
 }
 
 .home-text {
@@ -74,7 +72,8 @@ body {
 
 #banner-text {
     font-variant: small-caps;
-    font-family: Kanit, sans-serif;
+    font-size: 30px;
+    font-family: 'Squada One', sans-serif;
 }
 
 /* .info-banner {
@@ -83,7 +82,17 @@ body {
     background-size:200%;
 } */
 
+/* #topnav {
+    background-color: #5590d4; 
+    background-color: #96b50c; 
+    background-color: #6cd45c;;
+    justify-content: center;
+    border-bottom: #000 3px solid; 
+} 
+*/
+
 #scroll-container {
+    font-family: Bebas Neue, sans-serif;
     background-size:200%;
     overflow: hidden;
     width: 100%;
@@ -173,10 +182,6 @@ input[name='q']::placeholder {
 
 .border-black {
     border: 1px solid black !important;
-}
-
-.nav-font {
-    font-size: 20px;
 }
 
 /* https://codepen.io/michellymelo/pen/xMOEpR */
