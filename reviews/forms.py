@@ -11,4 +11,4 @@ class ReviewForm(forms.ModelForm):
         Model and fields needed for reviews
         '''
         model = Review
-        fields = ('title', 'user', 'artist', 'label', 'content',)
+        fields = ('title', 'content',)

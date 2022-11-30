@@ -25,11 +25,18 @@
         
         <!-- Links are shown only to authenticated user -->
         {% if request.user.is_authenticated %}
-                <li class="nav-item">
-            <a class="nav-link text-black font-weight-bold" href="{% url 'create_review' %}" aria-label="link to reviews page">
-            <span class="span-nav">Record Reviews</a></span>
+        <li class="nav-item dropdown">
+            <a class="nav-link text-black font-weight-bold" href="#" aria-label="link to reviews page"
+                id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="span-nav">Record Reviews</a></span>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'create_review' %}" class="dropdown-item">Create a Review</a>
+                    <a href="#" class="dropdown-item">Posted Reviews</a>
+                {% endif %}
+            </div>
         </li>
-        
+
         <!-- Shown only for admin users -->
         {% if request.user.is_superuser %}
         <li class="nav-item">
@@ -55,7 +62,7 @@
         </li>
         {% endif %}
 
-        <!-- Links available to all visitors -->
+        <!-- Contact link available to all visitors -->
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'contact' %}" aria-label="link to contact us page">
             <span class="span-nav">Contact Us</a></span>

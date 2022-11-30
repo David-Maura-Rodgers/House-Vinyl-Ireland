@@ -10,12 +10,12 @@ class Review(models.Model):
     Model for user to create reviews on records
     '''
 
-    title = models.CharField(Record, max_length=100, blank=False)
+    title = models.ForeignKey(
+        Record, on_delete=models.CASCADE, max_length=100, blank=False
+    )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=False
     )
-    artist = models.CharField(Record, max_length=100, blank=False)
-    label = models.CharField(Label, max_length=100, blank=True, default='')
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
