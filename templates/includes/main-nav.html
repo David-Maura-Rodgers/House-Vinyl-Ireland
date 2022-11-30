@@ -25,14 +25,11 @@
         
         <!-- Links are shown only to authenticated user -->
         {% if request.user.is_authenticated %}
-        <!-- <li class="nav-item">
-            <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}" aria-label="link to user profile page">
-            <span class="span-nav">Profile</a></span>
-        </li> -->
-        <li class="nav-item">
-            <a class="nav-link text-black font-weight-bold" href="" aria-label="link to reviews page">
+                <li class="nav-item">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'create_review' %}" aria-label="link to reviews page">
             <span class="span-nav">Record Reviews</a></span>
         </li>
+        
         <!-- Shown only for admin users -->
         {% if request.user.is_superuser %}
         <li class="nav-item">

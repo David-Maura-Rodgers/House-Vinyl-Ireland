@@ -15,7 +15,7 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     model = Review
     form_class = ReviewForm
-    template_name = "record_reviews.html"
+    template_name = "reviews/create_review.html"
     success_url = "/"
 
     def test_func(self):
@@ -62,7 +62,7 @@ class ReviewDetail(View):
 
         return render(
             request,
-            "review_detail.html",
+            "reviews/review_detail.html",
             {
                 "review": review,
             },
