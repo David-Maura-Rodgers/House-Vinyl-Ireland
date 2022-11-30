@@ -15,10 +15,11 @@
             id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="span-nav">Browse Label</a></span>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Kaoz</a>
-                <a href="" class="dropdown-item ">Faith</a>
-                <a href="" class="dropdown-item ">Glitterbox</a>
-                <a href="" class="dropdown-item ">NuGroove</a>
+                <a href="{% url 'products' %}?label=Kaoz" class="dropdown-item">Kaoz</a>
+                <a href="{% url 'products' %}?label=Faith" class="dropdown-item">Faith</a>
+                <a href="{% url 'products' %}?label=Glitterbox" class="dropdown-item">Glitterbox</a>
+                <a href="{% url 'products' %}?label=NuGroove" class="dropdown-item">NuGroove</a>
+                <a href="{% url 'products' %}?label=TestLabel" class="dropdown-item">Test Label</a>
             </div>
         </li>
         

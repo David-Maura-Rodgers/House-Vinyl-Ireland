@@ -2,28 +2,36 @@
     "pk": 1,
     "model": "products.label",
     "fields": {
-        "name": "kaoz",
+        "label": "Kaoz",
         "friendly_name": "Kaoz"
     }
 }, {
     "pk": 2,
     "model": "products.label",
     "fields": {
-        "name": "faith",
+        "label": "Faith",
         "friendly_name": "Faith"
     }
 }, {
     "pk": 3,
     "model": "products.label",
     "fields": {
-        "name": "glitterbox",
+        "label": "Glitterbox",
         "friendly_name": "Glitterbox"
     }
 }, {
     "pk": 4,
     "model": "products.label",
     "fields": {
-        "name": "nugroove",
+        "label": "NuGroove",
         "friendly_name": "NuGroove"
     }
+}, {
+    "pk": 5,
+    "model": "products.label",
+    "fields": {
+        "label": "TestLabel",
+        "friendly_name": "TestLabel"
+    }
+
 }]

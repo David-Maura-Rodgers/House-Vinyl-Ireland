@@ -14,25 +14,32 @@ def all_products(request):
 
     records = Record.objects.all()
     query = None
-    labels = None
+    label = None
 
     if request.GET:
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(
-                    request, "You didn't enter any search criteria!"
-                )
-                return redirect(reverse('products'))
+        if 'label' in request.GET:
+            label = request.GET['label'].split(',')
+            records = records.filter(label__label__in=label)
+            label = Label.objects.filter(label__in=label)
 
-            queries = Q(title__icontains=query) | Q(
-                artist__icontains=query
-            )
-            records = records.filter(queries)
+        if request.GET:
+            if 'q' in request.GET:
+                query = request.GET['q']
+                if not query:
+                    messages.error(
+                        request, "You didn't enter any search criteria!"
+                    )
+                    return redirect(reverse('products'))
+
+                queries = Q(title__icontains=query) | Q(
+                    artist__icontains=query
+                )
+                records = records.filter(queries)
 
     context = {
         'records': records,
         'search_term': query,
+        'current_labels': label,
     }
 
     return render(request, 'products/products.html', context)
