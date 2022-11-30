@@ -10,13 +10,13 @@ def contact(request):
     '''
     A view to return the contact page
     '''
+
     if request.method == "POST":
         form_data = {
             'full_name': request.POST['full_name'],
             'order_number': request.POST['order_number'],
             'email': request.POST['email'],
             'message': request.POST['message'],
-            'message_date': request.POST['message_date']
         }
 
         contact_form = ContactForm(form_data)
@@ -41,6 +41,7 @@ def contact(request):
 
     else:
         contact_form = ContactForm()
+
     template = 'contact/contact.html'
     context = {
         'contact_form': contact_form
