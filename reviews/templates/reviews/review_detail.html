@@ -27,4 +27,19 @@
     </div>
 </div>
 
+<div class="container-fluid-home">
+    <div class="card-row">
+        <div class="review-content">
+            <div class="card-body">
+                <!-- The | safe filter is used inside the template tags -->
+                <div class="review-text">
+                    <p class="card-text">
+                        {{ review.content | safe }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

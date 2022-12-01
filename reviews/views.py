@@ -1,10 +1,21 @@
-from django.views.generic import View, CreateView
+from django.views.generic import View, ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Review, Record, Label
 from .forms import ReviewForm
+
+
+class ReviewList(ListView):
+    """
+    This view will be rendered on the home page in a list view
+    that paginates every 6 entries
+    """
+    model = Review
+    queryset = Review.objects.filter(status=1).order_by("-created_on")
+    template_name = "posted_review.html"
+    paginate_by = 6
 
 
 class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
