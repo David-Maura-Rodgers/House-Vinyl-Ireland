@@ -16,6 +16,9 @@ class Review(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=False
     )
+    subject = models.CharField(
+        max_length=100, null=False, blank=False, default='Enter Subject'
+    )
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -31,4 +34,4 @@ class Review(models.Model):
         '''
         Override default str method
         '''
-        return self.title
+        return self.subject
