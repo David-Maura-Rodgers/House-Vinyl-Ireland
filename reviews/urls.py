@@ -7,4 +7,6 @@ urlpatterns = [
         "posted_review/", views.ReviewList.as_view(),
         name="posted_review"
     ),
+    path("<slug:pk>/<str:title>/", views.ReviewDetail.as_view(),
+         name="review_detail"),
 ]

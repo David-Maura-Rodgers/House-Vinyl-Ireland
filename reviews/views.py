@@ -19,6 +19,30 @@ class ReviewList(ListView):
     paginate_by = 6
 
 
+class ReviewDetail(View):
+    '''
+    This view will be rendered on the review detail page:
+    User can see the content of posted reviews
+    '''
+
+    def get(self, request, pk, title, *args, **kwargs):
+        '''
+        User will be able to vote like, funny and insightful
+        User can also see comments that have been made on the review
+        '''
+
+        queryset = Review.objects.filter(status=1)
+        review = get_object_or_404(queryset, pk=pk)
+
+        return render(
+            request,
+            "reviews/review_detail.html",
+            {
+                "review": review,
+            },
+        )
+
+
 class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     '''
     This renders the Review page
