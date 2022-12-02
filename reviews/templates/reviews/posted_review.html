@@ -12,6 +12,7 @@
                 <div class="card-body bg-dark text-white">    
                     <p>User: {{ review.user }}</p>
                     <h2 class="card-title">{{ review.title }}</h2>
+                    <h2 class="card-title">{{ review.label }}</h2>
                     <a href="{% url 'review_detail' review.pk review.title %}" class="review-link">    
                     <h2 class="card-title-black">{{ review.subject }}</h2>
                     </a>    
