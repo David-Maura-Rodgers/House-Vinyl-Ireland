@@ -17,7 +17,7 @@ class Review(models.Model):
         User, on_delete=models.CASCADE, blank=False
     )
     subject = models.CharField(
-        max_length=100, null=False, blank=False, default='Enter Subject'
+        max_length=100, null=False, blank=False, default='Enter Review Title'
     )
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)

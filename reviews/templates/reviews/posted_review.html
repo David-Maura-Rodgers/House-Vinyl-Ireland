@@ -3,12 +3,16 @@
 
 {% block content %}
 
-<div class="container-fluid p-5">
+<div class="container-fluid p-5 mt-5">
+
+    <div class="text-center pb-0 mt-1">
+        <a class="btn btn-outline-black rounded-0 text-white span-nav" href="{% url 'products' %}">Home</a>
+    </div>
 
     {% if is_paginated %}
 
         <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center pt-5">
+            <ul class="pagination justify-content-center pt-4">
 
                 {% if page_obj.has_previous %}
                 <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
@@ -26,7 +30,7 @@
     <div class="row">
 
         {% for review in review_list %}
-        <div class="col-md-6 offset-md-3 mt-2 pt-5">
+        <div class="col-md-6 offset-md-3 mt-2 pt-2">
             <div class="card text-center">
                 <div class="review-card text-white">    
                     <h3 class="text-black pt-3 pb-0">User: {{ review.user }}</h3>

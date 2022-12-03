@@ -24,7 +24,11 @@
         {{ form | crispy }}
         {% csrf_token %}
         <hr>
-        <button type="submit" class="btn btn-signup btn-lg text-white pb-5" aria-label="submit">Submit Review</button>
+        <div class="text-center pb-5">
+            <button type="submit" class="btn btn-signup btn-lg text-white" aria-label="submit">Submit Review</button>
+            <br>
+            <a class="span-nav text-danger" href="{% url 'home' %}" aria-label="Return user to home page">Cancel</a>
+        </div>
     </form>
     {% endif %}
 </div>
