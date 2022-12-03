@@ -97,11 +97,16 @@
                             <tr>
                                 <th scope="col"><p class="mb-0 fs-1 text-uppercase">Track List</p></th>
                             </tr>
-                        <tbody>
-                            <tr>
-                                <th scope="row"><p class="mt-3">1. {{ record.track_list}}</p></th>
-                            </tr>
-                        </tbody>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                    {% for track in record.track_as_list %}
+                                        <span class="mt-1">{{track}}</span>
+                                        <br>
+                                    {% endfor %}
+                                    </th>
+                                </tr>
+                            </tbody>
                         </thead>
                     </table>
                 </div>

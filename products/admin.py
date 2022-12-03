@@ -18,7 +18,6 @@ class RecordAdmin(admin.ModelAdmin):
         'artist',
         'title',
         'label',
-        'stock_quantity',
     )
     ordering = ('artist',)
 
