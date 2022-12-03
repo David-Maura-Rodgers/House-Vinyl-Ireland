@@ -59,14 +59,14 @@
                 <hr class="my-0">
                 <div class="row text-white text-right">
                     <div class="col-7 offset-2">
-                        <p class="my-0 text-white ">Order Total:</p>
+                        <p class="my-0">Order Total:</p>
                         <p class="my-0">Delivery:</p>
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0 text-white">€{{ total | floatformat:2 }}</p>
-                        <p class="my-0 text-white">€{{ delivery | floatformat:2 }}</p>
-                        <p class="my-0 text-white">{{ grand_total | floatformat:2 }}</p>
+                        <p class="my-0">€{{ total | floatformat:2 }}</p>
+                        <p class="my-0">€{{ delivery | floatformat:2 }}</p>
+                        <p class="my-0">{{ grand_total | floatformat:2 }}</p>
                     </div>
                 </div>
             </div>
@@ -125,10 +125,10 @@
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
-							<span class="font-weight-bold">Adjust Basket</span>
+							<span class="font-weight-bold span-nav">Adjust Basket</span>
 						</a>
 						<button id="submit-button" class="btn btn-black rounded-0">
-							<span class="text-white">Complete Order</span>
+							<span class="text-white span-nav">Complete Order</span>
 							<span class="icon text-white">
 								<i class="fas fa-lock"></i>
 							</span>
