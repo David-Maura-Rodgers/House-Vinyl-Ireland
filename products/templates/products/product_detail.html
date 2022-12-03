@@ -83,11 +83,12 @@
                     <hr>
                     <p class="mb-0 fs-1 text-uppercase font-weight-bold">{{ record.artist }} | {{ record.title }}</p>
                     <hr>
-                    <p class="mb-0 fs-1 text-uppercase font-weight-bold">LABEL: {{ record.label.friendly_name }}</p>
+                    <p class="mb-0 fs-1 text-uppercase"><span class="font-weight-bold">LABEL:
+                        </span>{{ record.label.friendly_name }}</p>
                     <hr>
-                    <p class="lead mb-0 text-left font-weight-bold">PRICE: €{{ record.price }}</p>
+                    <p class="mb-0 fs-1 text-uppercase"><span class="font-weight-bold">PRICE: €</span>{{ record.price }}</p>
                     <hr>
-                    <p class="mt-3 font-weight-bold">RECORD INFO: <br>{{ record.description }}</p>   
+                    <p class="mt-3"><span class="font-weight-bold">RECORD INFO:</span><br>{{ record.description }}</p>   
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
