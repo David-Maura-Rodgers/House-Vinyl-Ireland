@@ -26,7 +26,7 @@
         </nav>
 
     {% endif %}
-
+    
     <div class="row">
 
         {% for review in review_list %}
@@ -37,7 +37,7 @@
                     <hr class="hr-white">
                     <h2 class="text-black">Record: {{ review.title }}</h2>
                     <h2 class="text-black">Label: (Need to Add . . .){{ products.label.label }}</h2>
-                        <span class="span-review text-black">Review Title: </span>
+                        <span class="span-review text-black">Review Title:</span>
                         <a href="{% url 'review_detail' review.pk review.title %}" class="review-link">    
                         <span class="span-review"> {{ review.subject }}</span>
                         </a>    
@@ -48,10 +48,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    
         {% if forloop.counter|divisibleby:3 %}  
-
+        
+    </div>
     <div class="row">
         {% endif %}
         {% endfor %}
@@ -72,9 +72,7 @@
             
         </ul>
     </nav>
-
-    {% endif %}
-
 </div>
+    {% endif %}
 
 {% endblock %}

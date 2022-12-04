@@ -34,6 +34,7 @@ body {
 
 .card {
     background: rgb(76, 75, 75);
+    border: rgb(76, 75, 75);
 }
 
 .review-card {
