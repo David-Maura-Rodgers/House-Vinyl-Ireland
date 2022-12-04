@@ -43,6 +43,12 @@ body {
     border: 4px solid rgb(170, 222, 121);
 }
 
+.review-detail-card {
+    min-height: 50vh;
+    border-radius: 25px;
+    border: 4px solid rgb(170, 222, 121);
+}
+
 .review-link {
     font-size: 30px;
 }
