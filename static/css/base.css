@@ -138,6 +138,10 @@ body {
 } 
 */
 
+.form-check-label {
+    color: white;
+}
+
 #scroll-container {
     background-size:200%;
     overflow: hidden;
