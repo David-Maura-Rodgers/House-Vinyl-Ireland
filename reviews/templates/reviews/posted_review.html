@@ -36,7 +36,7 @@
                     <h3 class="text-black pt-3 pb-0">User: {{ review.user }}</h3>
                     <hr class="hr-white">
                     <h2 class="text-black">Record: {{ review.title }}</h2>
-                    <h2 class="text-black">Label: (Need to Add . . .){{ products.label.label }}</h2>
+                    <h2 class="text-black">Label: {{ review.label }}</h2>
                         <span class="span-review text-black">Review Title:</span>
                         <a href="{% url 'review_detail' review.pk review.title %}" class="review-link">    
                         <span class="span-review"> {{ review.subject }}</span>

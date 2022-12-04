@@ -13,6 +13,10 @@ class Review(models.Model):
     title = models.ForeignKey(
         Record, on_delete=models.CASCADE, max_length=100, blank=False
     )
+    label = models.ForeignKey(
+        Label, on_delete=models.CASCADE, max_length=100,
+        blank=False, default='1'
+    )
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, blank=False
     )
@@ -35,3 +39,19 @@ class Review(models.Model):
         Override default str method
         '''
         return self.subject
+
+
+# class Artist(models.Model):
+#     '''
+#     Model for user to create reviews on records
+#     '''
+
+#     producer = models.ForeignKey(
+#         Record, on_delete=models.CASCADE, max_length=100, blank=False
+#     )
+
+#     def __str__(self):
+#         '''
+#         Override default str method
+#         '''
+#         return self.producer

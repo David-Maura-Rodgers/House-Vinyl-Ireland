@@ -11,22 +11,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="col-md-6 offset-md-3">
-        <h1 class="text-white">{{ review.title }}</h1>
-        <hr class="hr-white">
-        <h2 class="text-white">{{ products.record.artist }}</h2>
-        <h2 class="text-white">{{ review.label }}</h2>
-        <p class="text-white">Poster: {{ review.user }} <br>Created on: {{ review.created_on }}</p>
-        
-        <!-- The | safe filter is used inside the template tags -->
-        <div class="review-detail-card bg-info">
-            <p class="text-black p-2">
-                {{ review.content | safe }}
-            </p>
+    <div class="container-fluid">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-white">Record: {{ review.title }}</h1>
+            <hr class="hr-white">
+            <h2 class="text-white">Artist: {{ record.producer }}</h2>
+            <h2 class="text-white">Label: {{ review.label }}</h2>
+            <p class="text-white">Poster: {{ review.user }} <br>Created on: {{ review.created_on }}</p>
+            
+            <!-- The | safe filter is used inside the template tags -->
+            <div class="review-detail-card bg-info">
+                <p class="text-black p-2">
+                    {{ review.content | safe }}
+                </p>
+            </div>
+            
         </div>
-        
     </div>
-</div>
 
 {% endblock %}

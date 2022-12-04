@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100, verbose_name=products.models.Record)),
                 ('artist', models.CharField(max_length=100, verbose_name=products.models.Record)),
-                ('label', models.CharField(blank=True, default='', max_length=100, verbose_name=products.models.Label)),
+                ('label', models.CharField(blank=True, default='1', max_length=100, verbose_name=products.models.Label)),
                 ('content', models.TextField()),
                 ('status', models.IntegerField(choices=[(0, 'Draft'), (1, 'Published')], default=0)),
                 ('created_on', models.DateTimeField(auto_now_add=True)),

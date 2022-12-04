@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='review',
             name='label',
-            field=models.ForeignKey(blank=True, default='', max_length=100, on_delete=django.db.models.deletion.CASCADE, to='products.label'),
+            field=models.ForeignKey(blank=True, default='1', max_length=100, on_delete=django.db.models.deletion.CASCADE, to='products.label'),
         ),
         migrations.AlterField(
             model_name='review',

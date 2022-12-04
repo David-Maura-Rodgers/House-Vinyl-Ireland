@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='label',
             name='friendly_name',
-            field=models.CharField(default='1', max_length=150),
+            field=models.CharField(default='', max_length=150),
         ),
         migrations.AlterField(
             model_name='record',

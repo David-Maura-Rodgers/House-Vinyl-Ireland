@@ -29,6 +29,7 @@ class Record(models.Model):
 
     title = models.CharField(max_length=254)
     artist = models.CharField(max_length=254)
+    producer = models.CharField(max_length=254, default="")
     label = models.ForeignKey(Label, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     track = models.CharField(
