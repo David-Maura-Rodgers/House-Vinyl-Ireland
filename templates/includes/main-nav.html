@@ -1,5 +1,5 @@
 <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav ml-auto w-auto mx-auto">
+    <ul class="navbar-nav">
 
         <!-- Links available to all visitors -->
         <li class="nav-item">
@@ -68,6 +68,13 @@
             <a class="nav-link text-black font-weight-bold" href="{% url 'contact' %}" aria-label="link to contact us page">
             <span class="span-nav">Contact Us</a></span>
         </li>
+        <li class="nav-item">
+            <div id="searchbar">
+                {% block searchbar %}
+                {% include 'includes/searchbar.html' %}
+                {% endblock %}
+            </div>
+        </li>
         <li class="list-inline-item dropdown">
             <a class="nav-link text-black font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -89,10 +96,10 @@
                 {% endif %}
             </div>
         </li>
-        <li class="borderBlink list-inline-item">
+        <li class="borderBlink nav-item">
             <a class="{% if grand_total %} text-white bg-dark {% else %}text-black{% endif %} nav-link" 
                 href="{% url 'view_basket' %}">
-                <div class="text-center"><i class="fas fa-shopping-bag fa-lg basket"></i>
+                <div class="text-center"><i class="fas fa-shopping-bag fa-lg"></i>
                     <span class="span-nav">
                         {% if grand_total %}
                             €{{ grand_total|floatformat:2 }}
