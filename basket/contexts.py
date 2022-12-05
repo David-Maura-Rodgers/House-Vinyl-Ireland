@@ -12,14 +12,15 @@ def basket_contents(request):
     basket = request.session.get('basket', {})
 
     for item_id, quantity in basket.items():
-        record = get_object_or_404(Record, pk=item_id)
-        total += quantity * record.price
-        record_count += quantity
-        basket_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'record': record,
-        })
+        if isinstance(quantity, int):
+            record = get_object_or_404(Record, pk=item_id)
+            total += quantity * record.price
+            record_count += quantity
+            basket_items.append({
+                'item_id': item_id,
+                'quantity': quantity,
+                'record': record,
+            })
 
     delivery = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)
     grand_total = total + delivery
