@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 html {
     height: 100%;
@@ -7,9 +9,6 @@ html {
 body {
     font-family: 'Squada One', sans-serif;
     font-size: 20px;
-    /* letter-spacing: 0.5px;
-    text-transform: none; */
-    /* background: rgba(0, 0, 0, 0.874); */
     background: rgb(76, 75, 75);
     height: calc(100vh - 164px);
     margin: 0;
@@ -91,21 +90,23 @@ body {
 }
 
 .social-links {
-    font-size: 22px;
+    font-size: 19px;
+    font-family: 'Kanit', sans-serif;
 }
 
 .home-header {
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
-    /* color: #7ea8d8;  */
-    /* color: #5590d4; */
     color: #96b50c;
-    /* color: #20c107; */
     border-top: groove 5px #f6a312;
+    font-family: 'Kanit', sans-serif;
+    text-transform: uppercase;
+    padding-top: 1%;
 }
 
 .home-text {
     margin: 0 2% 1% 2%;
     font-variant:initial;
+    font-family: 'Kanit', sans-serif;
 }
 
 .bg-info {
