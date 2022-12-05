@@ -15,6 +15,10 @@ body {
     padding: 0;
 }
 
+.product-details-container {
+    height: 60vh;
+}
+
 #main-nav {
     background-color: rgb(170, 222, 121);
 }
