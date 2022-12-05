@@ -3,6 +3,13 @@
 
         <!-- Links available to all visitors -->
         <li class="nav-item">
+            <div id="searchbar">
+                {% block searchbar %}
+                {% include 'includes/searchbar.html' %}
+                {% endblock %}
+            </div>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}" aria-label="link to home page">
             <span class="span-nav">Home</a></span> 
         </li>
@@ -64,16 +71,9 @@
         {% endif %}
 
         <!-- Contact link available to all visitors -->
-        <li class="nav-item">
+        <li class="nav-item mr-5">
             <a class="nav-link text-black font-weight-bold" href="{% url 'contact' %}" aria-label="link to contact us page">
             <span class="span-nav">Contact Us</a></span>
-        </li>
-        <li class="nav-item">
-            <div id="searchbar">
-                {% block searchbar %}
-                {% include 'includes/searchbar.html' %}
-                {% endblock %}
-            </div>
         </li>
         <li class="list-inline-item dropdown">
             <a class="nav-link text-black font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -96,7 +96,7 @@
                 {% endif %}
             </div>
         </li>
-        <li class="borderBlink nav-item">
+        <li class="borderBlink nav-item {% if grand_total %} text-white bg-dark {% else %} text-black {% endif %}">
             <a class="{% if grand_total %} text-white bg-dark {% else %}text-black{% endif %} nav-link" 
                 href="{% url 'view_basket' %}">
                 <div class="text-center"><i class="fas fa-shopping-bag fa-lg"></i>

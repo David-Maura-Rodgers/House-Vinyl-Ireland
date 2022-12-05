@@ -20,10 +20,6 @@ body {
     background-color: rgb(170, 222, 121);
 }
 
-.navbar-nav {
-    margin-left: 1%;
-}
-
 #searchbar {
     margin-top: 3%;
     width: 475px;
@@ -280,7 +276,7 @@ input[name='q']::placeholder {
         border-color: transparent;    
     }    
     50% {    
-        border-color: bisque;    
+        border-color: goldenrod;    
     }    
 } 
 
