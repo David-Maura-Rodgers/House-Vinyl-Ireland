@@ -19,6 +19,10 @@ body {
     height: 60vh;
 }
 
+.card-img-top {
+    height: 30vh;
+}
+
 #main-nav {
     background-color: rgb(170, 222, 121);
 }
