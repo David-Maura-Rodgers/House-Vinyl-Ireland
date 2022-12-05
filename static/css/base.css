@@ -19,8 +19,9 @@ body {
     height: 60vh;
 }
 
-.card-img-top {
+.card-img-top-products {
     height: 30vh;
+    width: 30vw;
 }
 
 #main-nav {

@@ -34,11 +34,11 @@
                             <div class="card h-100 border-0 shadow p-3 mb-2 bg-white rounded">
                                 {% if record.image %}
                                 <a href="{% url 'product_detail' record.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ record.image.url }}" alt="{{ record.title }}">
+                                    <img class="card-img-top-products img-fluid" src="{{ record.image.url }}" alt="{{ record.title }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' record.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ record.title }}">
+                                    <img class="card-img-top-products img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ record.title }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
