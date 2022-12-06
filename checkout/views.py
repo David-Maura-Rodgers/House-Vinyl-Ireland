@@ -7,9 +7,10 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, ItemCheckout
+
 from products.models import Record
-from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from basket.contexts import basket_contents
 
 import stripe
@@ -57,7 +58,6 @@ def checkout(request):
         }
 
         order_form = OrderForm(form_data)
-
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -88,8 +88,8 @@ def checkout(request):
                 reverse('checkout_success', args=[order.order_number])
             )
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+            messages.error(request, ('There was an error with your form. \
+                Please double check your information.'))
     else:
         basket = request.session.get('basket', {})
         if not basket:
@@ -99,17 +99,16 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_basket = basket_contents(request)
-        print(current_basket)
         total = current_basket['grand_total']
-        print(total)
         stripe_total = round(total * 100)
-        print(stripe_total)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
 
+        # Attempt to prefill the form with any info
+        # the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -131,18 +130,18 @@ def checkout(request):
 
         order_form = OrderForm()
 
-        if not stripe_public_key:
-            messages.warning(request, 'Stripe public key is missing. \
-                Did you forget to set it in your environment?')
+    if not stripe_public_key:
+        messages.warning(request, ('Stripe public key is missing. \
+            Did you forget to set it in your environment?'))
 
-        template = 'checkout/checkout.html'
-        context = {
-            'order_form': order_form,
-            'stripe_public_key': stripe_public_key,
-            'client_secret': intent.client_secret,
-        }
+    template = 'checkout/checkout.html'
+    context = {
+        'order_form': order_form,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
+    }
 
-        return render(request, template, context)
+    return render(request, template, context)
 
 
 def checkout_success(request, order_number):
