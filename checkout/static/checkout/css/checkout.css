@@ -22,7 +22,11 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #212529;
+    color: #aab7c4;
+}
+
+.stripe-style-input.textinput.textInput.form-control {
+    color: #cfd7df;
 }
 
 .fieldset-label {
