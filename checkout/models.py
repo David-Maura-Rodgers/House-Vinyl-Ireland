@@ -51,12 +51,11 @@ class Order(models.Model):
         '''
         ordering = ['-date']
 
-    # prepend _ is used to declare this method is private to this class
     def _generate_order_number(self):
-        """
+        '''
         Generate a random, unique order number using UUID
-        """
-        return uuid.uuid4().hex.upper
+        '''
+        return uuid.uuid4().hex.upper()
 
     def calc_total(self):
         '''
