@@ -19,11 +19,6 @@ body {
     height: 60vh;
 }
 
-/* .card-img-top-products {
-    height: 30vh;
-    width: 30vw;
-} */
-
 #main-nav {
     background-color: rgb(170, 222, 121);
 }
@@ -340,15 +335,6 @@ input[name='q']::placeholder {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens*/
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
 } 
 
 /* Allauth form formatting */
@@ -434,8 +420,15 @@ input[name='q']::placeholder {
 }
 
 
-/* ------------- ALL MEDIA QUERIES ---------------- */
+/* -------------    MEDIA QUERIES ---------------- */
 /* -------------- NAV BAR / HEADER ---------------- */
+
+/* Slightly larger container on xl screens*/
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -495,7 +488,7 @@ input[name='q']::placeholder {
     }
 }
 
-/* ------------- ALL MEDIA QUERIES ---------------- */
+/* ------------- MEDIA QUERIES ---------------- */
 /* ------------------ HOME PAGE ------------------- */
 
 @media (max-width: 576px) {
@@ -532,105 +525,56 @@ input[name='q']::placeholder {
     }
 }
 
-/* ------------- ALL MEDIA QUERIES ---------------- */
+/* ------------- MEDIA QUERIES ---------------- */
 /* ------------ PRODUCT DETAILS PAGE -------------- */
 
-/* https://love2dev.com/blog/absolute-centering-css/#:~:text=All%20you%20need%20to%20do,to%20the%20Header's%20CSS%20rules.&text=You%20can%20use%20this%20combination,centered%20within%20a%20parent%20element. */
-/* @media (min-width: 320px) {
-    .flex-center { 
-        align-items: center; 
-        justify-content: center;
-        flex-direction: column;
-    }
-    #minus-plus {
-        min-width: 50vw;
-        margin-left: -15%;
-    }
-    #product-btn {
-        min-width: 110vw;
-        margin-left: 1%;
-    }
-    #edit-btn {
-        min-width: 80vw;
-        margin-right: 20%;
-    } 
-    .image-container {
-        width: 80vw;
-        margin: auto;
-    }
-    .product-details-container {
-        height: 77vh;
-        width: 80vw;
-        margin: auto;
-    }
-    .container-fluid {
-        overflow-y: hidden;
-        overflow-x: hidden;
-    }
-}
-
 @media (max-width: 576px) {
-    .flex-center { 
-        align-items: center; 
-        justify-content: center;
-        flex-direction: column;
-    }
-    #minus-plus {
-        min-width: 50vw;
-        margin-left: -15%;
-    }
-    #product-btn {
-        min-width: 110vw;
-        margin-left: 1%;
-    }
-    #edit-btn {
-        min-width: 80vw;
-        margin-right: 15%;
-    } 
-    .image-container {
-        width: 80vw;
-        margin: auto;
-    }
     .product-details-container {
         height: 77vh;
-        width: 80vw;
-        margin: auto;
     }
-    .container-fluid {
-        overflow-y: hidden;
-        overflow-x: hidden;
+    #edit-btn {
+        display: none;
+    }
+    #qty-btn {
+        min-width: 48vw;
+    }
+    .track-container {
+        height: 55vh;
+    }
+    .product-page-container {
+        margin-top: 0 auto;
     }
 }
 
-@media (min-width: 768px) {
-    .flex-center { 
-        align-items: center; 
-        justify-content: center;
-        flex-direction: column;
-    }
-    #minus-plus {
-        min-width: 50vw;
-        margin-left: -15%;
-    }
-    #product-btn {
-        min-width: 110vw;
-        margin-left: 70%;
+@media (max-width: 768px) {
+    .product-details-container {
+        height: 90vh;
     }
     #edit-btn {
-        min-width: 80vw;
-        margin-right: 15%;
-    } 
-    .image-container {
-        width: 80vw;
-        margin: auto;
+        display: none;
     }
+    .track-container {
+        height: 55vh;
+    }
+    .product-page-container {
+        margin-top: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
     .product-details-container {
-        height: 77vh;
-        width: 80vw;
-        margin: auto;
+        height: 90vh;
     }
-    .container-fluid {
-        overflow-y: hidden;
-        overflow-x: hidden;
+    #edit-btn {
+        margin-left: 10%;
     }
-} */
+    #shop-btn {
+        margin: 0 auto;
+    }
+    .track-container {
+        height: 55vh;
+    }
+    .product-page-container {
+        margin-top: 0 auto;
+    }
+}
