@@ -91,24 +91,22 @@ body {
     background: url("/static/images/home-header-vinyl-4.jpg") no-repeat center center;
     background-size: cover;
     height: 50vh;
-    width: 48%;
-    margin-right: 2%;
-    margin-left: 1%;
+    margin-bottom: 1%;
     border-radius: 25px;
     border: 4px solid #f6a312;
 }
 
 .social-image {
-    background: url("/static/images/social-media-3.jpg") no-repeat right;
-    background-size: 75%;
+    background: url("/static/images/social-media-4.png") no-repeat center center;
+    background-size: cover;
     height: 50vh;
-    width: 48%;
     border-radius: 25px;
     border: 4px solid #f6a312;
+    margin-bottom: 1%;
 }
 
 .social-links {
-    font-size: 19px;
+    font-size: 20px;
     font-family: 'Kanit', sans-serif;
 }
 
@@ -347,11 +345,11 @@ input[name='q']::placeholder {
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens*/
-/* @media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
-}  */
+} 
 
 /* Allauth form formatting */
 
@@ -435,6 +433,10 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+
+/* ------------- ALL MEDIA QUERIES ---------------- */
+/* -------------- NAV BAR / HEADER ---------------- */
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -496,170 +498,37 @@ input[name='q']::placeholder {
 /* ------------- ALL MEDIA QUERIES ---------------- */
 /* ------------------ HOME PAGE ------------------- */
 
-@media screen and (max-width: 280px) {
+@media (max-width: 576px) {
     .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
+        margin: 0 auto;
+    }
+    .home-text {
         margin: 0 auto;
     }
     .social-image {
-        background-size: 0%;
-        height: 50vh;
-        width: 0%;
-        margin-top: 2%;
-    }
-    .social-links {
-        margin-left: 5%;
-    }
-    #searchbar {
-        max-width: 75vw;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
         margin-top: 3%;
+        background-image: url("");
+        background-color: #fff;
     }
     .social-links {
         margin-left: 12.5%;
     }
     #searchbar {
-        max-width: 75vw;
+        max-width: 65vw;
     }
 }
 
-@media screen and (max-width: 576px) {
+@media (max-width: 768px) {
     .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
+        margin: 0 auto;
+    }
+    .home-text {
         margin: 0 auto;
     }
     .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
-        margin-top: 2%;
-    }
-    .social-links {
-        margin-left: 12.5%;
-    }
-    #searchbar {
-        max-width: 75vw;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
-        margin-top: 2%;
-    }
-    .social-links {
-        margin-left: 22.5%;
-    }
-    #searchbar {
-        max-width: 75vw;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
-        margin-top: 1%;
-    }
-    .social-links {
-        margin-left: 12.5%;
-    }
-    #searchbar {
-        max-width: 75vw;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
-        margin-top: 1%;
-    }
-    .social-links {
-        margin-left: 22.5%;
-        font-size: 20px;
-    }
-    #searchbar {
-        max-width: 25vw;
-    }
-}
-
-/* @media screen and (max-width: 1200px) {
-    .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
-        margin-top: 1%;
-    }
-    .social-links {
-        margin-left: 22.5%;
-    }
-} */
-
-@media screen and (max-width: 1440px) {
-    .home-image {
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .social-image {
-        background: url("");
-        height: 50vh;
-        width: 100%;
-        margin-top: 1%;
-    }
-    .social-links {
-        margin-left: 25%;
-        font-size: 15px;
-    }
-    .span-nav {
-        font-size: 20px;
+        margin-top: 3%;
+        background-image: url("");
+        background-color: #fff;
     }
 }
 
@@ -667,29 +536,101 @@ input[name='q']::placeholder {
 /* ------------ PRODUCT DETAILS PAGE -------------- */
 
 /* https://love2dev.com/blog/absolute-centering-css/#:~:text=All%20you%20need%20to%20do,to%20the%20Header's%20CSS%20rules.&text=You%20can%20use%20this%20combination,centered%20within%20a%20parent%20element. */
-@media screen and (max-width: 320px) {
-    
+/* @media (min-width: 320px) {
     .flex-center { 
         align-items: center; 
         justify-content: center;
         flex-direction: column;
-    } 
-
+    }
     #minus-plus {
         min-width: 50vw;
         margin-left: -15%;
     }
-
     #product-btn {
-        min-width: 120vw;
-        margin-left: 7%;
+        min-width: 110vw;
+        margin-left: 1%;
     }
-
     #edit-btn {
-        min-width: 100vw;
-        margin-right: 15%;
+        min-width: 80vw;
+        margin-right: 20%;
     } 
+    .image-container {
+        width: 80vw;
+        margin: auto;
+    }
     .product-details-container {
-        height: 75vh;
+        height: 77vh;
+        width: 80vw;
+        margin: auto;
+    }
+    .container-fluid {
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
 }
+
+@media (max-width: 576px) {
+    .flex-center { 
+        align-items: center; 
+        justify-content: center;
+        flex-direction: column;
+    }
+    #minus-plus {
+        min-width: 50vw;
+        margin-left: -15%;
+    }
+    #product-btn {
+        min-width: 110vw;
+        margin-left: 1%;
+    }
+    #edit-btn {
+        min-width: 80vw;
+        margin-right: 15%;
+    } 
+    .image-container {
+        width: 80vw;
+        margin: auto;
+    }
+    .product-details-container {
+        height: 77vh;
+        width: 80vw;
+        margin: auto;
+    }
+    .container-fluid {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    .flex-center { 
+        align-items: center; 
+        justify-content: center;
+        flex-direction: column;
+    }
+    #minus-plus {
+        min-width: 50vw;
+        margin-left: -15%;
+    }
+    #product-btn {
+        min-width: 110vw;
+        margin-left: 70%;
+    }
+    #edit-btn {
+        min-width: 80vw;
+        margin-right: 15%;
+    } 
+    .image-container {
+        width: 80vw;
+        margin: auto;
+    }
+    .product-details-container {
+        height: 77vh;
+        width: 80vw;
+        margin: auto;
+    }
+    .container-fluid {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+} */
