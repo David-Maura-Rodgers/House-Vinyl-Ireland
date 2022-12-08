@@ -34,7 +34,7 @@ body {
 }
 
 #searchbar {
-    width: 475px;
+    min-width: 20vw;
     margin-top: 2%;
 }
 
@@ -346,12 +346,12 @@ input[name='q']::placeholder {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens
-@media (min-width: 1200px) {
+/* Slightly larger container on xl screens*/
+/* @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
-} */
+}  */
 
 /* Allauth form formatting */
 
@@ -513,7 +513,7 @@ input[name='q']::placeholder {
         margin-left: 5%;
     }
     #searchbar {
-        width: 300px;
+        max-width: 75vw;
     }
 }
 
@@ -534,7 +534,7 @@ input[name='q']::placeholder {
         margin-left: 12.5%;
     }
     #searchbar {
-        width: 300px;
+        max-width: 75vw;
     }
 }
 
@@ -555,7 +555,7 @@ input[name='q']::placeholder {
         margin-left: 12.5%;
     }
     #searchbar {
-        width: 300px;
+        max-width: 75vw;
     }
 }
 
@@ -576,7 +576,7 @@ input[name='q']::placeholder {
         margin-left: 22.5%;
     }
     #searchbar {
-        width: 300px;
+        max-width: 75vw;
     }
 }
 
@@ -596,13 +596,12 @@ input[name='q']::placeholder {
     .social-links {
         margin-left: 12.5%;
     }
-
     #searchbar {
-        width: 300px;
+        max-width: 75vw;
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
     .home-image {
         background-size: cover;
         height: 50vh;
@@ -620,14 +619,11 @@ input[name='q']::placeholder {
         font-size: 20px;
     }
     #searchbar {
-        width: 300px;
-    }
-    .span-nav {
-        font-size: 12px;
+        max-width: 25vw;
     }
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .home-image {
         background-size: cover;
         height: 50vh;
@@ -643,14 +639,7 @@ input[name='q']::placeholder {
     .social-links {
         margin-left: 22.5%;
     }
-    #searchbar {
-        width: 300px;
-    }
-    .span-nav {
-        font-size: 12px;
-        padding: 0%;
-    }
-}
+} */
 
 @media screen and (max-width: 1440px) {
     .home-image {
@@ -668,9 +657,6 @@ input[name='q']::placeholder {
     .social-links {
         margin-left: 25%;
         font-size: 15px;
-    }
-    #searchbar {
-        width: 320px;
     }
     .span-nav {
         font-size: 20px;
