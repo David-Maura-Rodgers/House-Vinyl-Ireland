@@ -13,7 +13,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 offset-lg-3 offset-md-3">
                 <hr>
                 <h2 class="logo-font mb-4 text-white">Store Management</h2>
                 <h5 class="text-white">Add a Record</h5>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 offset-md-3">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2 text-white" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
