@@ -1,9 +1,10 @@
 <form class="form" method="GET" action="{% url 'products' %}">
-    <div class="input-group w-75 mx-auto">
+    <div class="input-group w-75 mx-auto" id="searchbar">
         <input class="form-control border border-black rounded-0" type="text" name="q" 
-            placeholder="Type name of song or artist . . .">
-        <div class="input-group-append">
-            <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+            id="searchbar" placeholder="Type name of song or artist . . .">
+        <div class="input-group-append" id="search-btn">
+            <button class="form-control form-control btn btn-black border border-black rounded-0" 
+                type="submit">
                 <span class=" text-white icon">
                     <i class="fas fa-search"></i>
                 </span>

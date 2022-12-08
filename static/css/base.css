@@ -34,8 +34,12 @@ body {
 }
 
 #searchbar {
-    margin-top: 3%;
     width: 475px;
+    margin-top: 2%;
+}
+
+#search-btn {
+    margin-top: 2%;
 }
 
 .nav-item {
@@ -119,21 +123,13 @@ body {
 
 .home-text {
     margin: 0 2% 1% 2%;
-    font-variant:initial;
     font-family: 'Kanit', sans-serif;
 }
 
 .bg-info {
     background-color: white !important;
-
     border-top: #000 3px solid;
-    /* border-top-left-radius: 50px;
-    border-top-right-radius: 50px; */
-    
     border-bottom: #000 3px solid;
-    /* border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px; */
-
     margin-top: 0;
 }
 
@@ -142,21 +138,6 @@ body {
     font-size: 30px;
     font-family: 'Squada One', sans-serif;
 }
-
-/* .info-banner {
-    background-color: black !important;
-    width: 200%;
-    background-size:200%;
-} */
-
-/* #topnav {
-    background-color: #5590d4; 
-    background-color: #96b50c; 
-    background-color: #6cd45c;;
-    justify-content: center;
-    border-bottom: #000 3px solid; 
-} 
-*/
 
 .form-check-label {
     color: white;
@@ -365,12 +346,12 @@ input[name='q']::placeholder {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
+/* Slightly larger container on xl screens
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
-}
+} */
 
 /* Allauth form formatting */
 
@@ -512,8 +493,10 @@ input[name='q']::placeholder {
     }
 }
 
-/* 320 px for home page */
-@media(max-width: 320px) {
+/* ------------- ALL MEDIA QUERIES ---------------- */
+/* ------------------ HOME PAGE ------------------- */
+
+@media screen and (max-width: 280px) {
     .home-image {
         background-size: cover;
         height: 50vh;
@@ -523,17 +506,173 @@ input[name='q']::placeholder {
     .social-image {
         background-size: 0%;
         height: 50vh;
+        width: 0%;
+        margin-top: 2%;
+    }
+    .social-links {
+        margin-left: 5%;
+    }
+    #searchbar {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
+        width: 100%;
+        margin-top: 3%;
+    }
+    .social-links {
+        margin-left: 12.5%;
+    }
+    #searchbar {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
         width: 100%;
         margin-top: 2%;
     }
     .social-links {
         margin-left: 12.5%;
     }
-    .header-container {
-        margin-top: -10%;
+    #searchbar {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
+        width: 100%;
+        margin-top: 2%;
+    }
+    .social-links {
+        margin-left: 22.5%;
     }
     #searchbar {
-        margin-top: 3%;
         width: 300px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
+        width: 100%;
+        margin-top: 1%;
+    }
+    .social-links {
+        margin-left: 12.5%;
+    }
+
+    #searchbar {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
+        width: 100%;
+        margin-top: 1%;
+    }
+    .social-links {
+        margin-left: 22.5%;
+        font-size: 20px;
+    }
+    #searchbar {
+        width: 300px;
+    }
+    .span-nav {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
+        width: 100%;
+        margin-top: 1%;
+    }
+    .social-links {
+        margin-left: 22.5%;
+    }
+    #searchbar {
+        width: 300px;
+    }
+    .span-nav {
+        font-size: 12px;
+        padding: 0%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .home-image {
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .social-image {
+        background: url("");
+        height: 50vh;
+        width: 100%;
+        margin-top: 1%;
+    }
+    .social-links {
+        margin-left: 25%;
+        font-size: 15px;
+    }
+    #searchbar {
+        width: 320px;
+    }
+    .span-nav {
+        font-size: 20px;
     }
 }
