@@ -23,11 +23,6 @@ body {
     background-color: rgb(170, 222, 121);
 }
 
-.toast-color {
-    background-color: rgb(170, 222, 121);
-    border: #000 1px solid;
-}
-
 #searchbar {
     min-width: 20vw;
     margin-top: 2%;
