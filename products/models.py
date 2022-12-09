@@ -33,7 +33,7 @@ class Record(models.Model):
     label = models.ForeignKey(Label, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     track = models.CharField(
-        max_length=100, null=False, blank=False, default=""
+        max_length=500, null=False, blank=False, default=""
     )
     description = models.TextField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)

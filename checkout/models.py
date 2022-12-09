@@ -13,7 +13,7 @@ from profiles.models import UserProfile
 class Order(models.Model):
     '''
     Model for customer record purchases
-    Captures the order info and generates a a random, unique order number
+    Captures the order info and generates a random, unique order number
     '''
 
     order_number = models.CharField(max_length=32, null=False, editable=False)

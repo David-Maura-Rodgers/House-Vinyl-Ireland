@@ -556,11 +556,14 @@ input[name='q']::placeholder {
     .product-page-container {
         margin: 0 auto;
     }
+    body {
+        font-size: 17px;
+    }
 }
 
 @media (min-width: 992px) {
     .product-details-container {
-        height: 90vh;
+        height: 60vh;
     }
     #edit-btn {
         margin-left: 10%;
@@ -569,7 +572,7 @@ input[name='q']::placeholder {
         margin: 0 auto;
     }
     .track-container {
-        height: 55vh;
+        height: 60vh;
     }
     .product-page-container {
         margin: 0 auto;
