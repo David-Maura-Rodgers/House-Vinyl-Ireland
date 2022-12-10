@@ -70,6 +70,9 @@ class CreateReview(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         This will save the content and send to server to be authorised
         '''
 
+        title = form.cleaned_data['title']
+        record = Record.objects.get(title=title)
+        form.instance.label = record.label
         form.instance.user = self.request.user
         form.save()
 
