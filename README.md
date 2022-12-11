@@ -328,7 +328,7 @@ Site user can use the contact page. The contents of this communication will be s
 **Store Management**
 (***For Super User only***)
 
-Site onwner can add a new record. And they can also edit or delete a record from the record details page:
+Site owner can add a new record. And they can also edit or delete a record from the record details page:
 
 ![Add Record](docs/readme/add-record.png)
 ![Edit/Delete Record](docs/readme/edit-delete.png)
