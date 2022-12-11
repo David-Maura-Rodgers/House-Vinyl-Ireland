@@ -42,51 +42,177 @@ The Admin panel can be accessed simply from the home page. You can navigate to i
 * Be able to select quantity of record needed
 * See confirmation that prodcuts have been added to shopping basket
 * Be taken to a secure checkout page
-* Use basket icon on main nav bar to access my shopping basket from anywhere on the site. 
+* Use basket icon on main nav bar to access my shopping basket from anywhere on the site
 * Be able to review purchases from secure checkout page and be given an appropriate breakdown
 * Be able to remove or amend quantity on secure checkout page 
+* Confident that the site is using a reputable financial services compnay to process payments
 * Be able to checkout of the site and pay for selected records
+* Be shown an order summary straight after succesful payment has been taken
+* On submitting my order, I would like to receive a confirmation email with my order details and a unique order number
 
-### Profile: 
+### Profile & Contact: 
 * Be able to enter my personal information in a secure environment.
-* Have the option to register with the site to save my personal information for a faster checkout next time I visit the site.
-* I would like to have the option to have my order sent to a different address to the billing address.
-* I would like to have the option to add a gift tag and have the items wrapped.
-* I would like to pay for my purchase using a trusted payment portal.
-* On submitting my order, I would like to receive a confirmation email with my order details and a unique order number.
-* I would like to receive a dispatch confirmation email with and estimated delivery date.
+* Have the option to register with the site to save my personal information so this is carried over for future purchases
 * Be able to contact the site owner by means of a contact form.
-* Be able to subscribe to a newsletter.
-* Have the option to unsubscribe from the newsletter mailing list.
+* Be able to subscribe to a newsletter
+* Be able to view my personal information
+* Be able to update my personal information
+* Be able to delete my personal information
+* View all previous purchases made from My Profile page
 
+### Record Reviews: 
+* Be able to select a record I have previously bought and leave a review
+* Be able to view any review posted by other users
+* Have the option to edit or delete reviews I have posted
 
-* As a registered site visitor I would like to:
-  * Have the option to login with a social media account for a speedier "1 click" login.
-  * Be able to access my account/profile page.
-    * I would like to be able to view my personal information.
-    * I would like to be able to update my personal information.
-    * I would like to be able to delete my personal information.
-    * I would like to be able to view my order history and any current orders to track progress.
-    * I would like the option to delete my account.
-  * Be able to publish reviews and ratings of products I have received.
-    * I would like to be able to create a review.
-    * I would like to be able to update a review.
-    * I would like to be able to delete a review.
-    * I would like to be able to rate a product out of 5 stars.
+<br>
+
+## Site Owner Goals
+
+### Site Admin Function
+* Add records to the store via the STORE MANAGEMENT link on main nav when logged in
+* Also be able add records from Site Admin page
+* Add nay new Labels so that new records can be assigned to them, if the label did not exist previously.
+* Edit or Delete records from STORE MANAGEMENT link or site admin on back end
+* Show any deals that are being offered on the site's scrolling banner
+* View all submitted record reviews so they can be approved for publishing to the site if appropriate
+* View all contacts made via the CONTACT US link from site users and respond accordingly
+
+<br>
+
+## Agile Planning
+<hr>
+This project was developed using agile methodologies by delivering apps and features within different epics and sprints, focusing on the most important 'must have' features and some 'could have' or 'should have' features. This approach ensured that all core requirements were completed first to give the project its intended functionlaty with some features that can be added in the future.
+
+The Kanban board was created using github projects and can be located [here](https://github.com/users/David-Maura-Rodgers/projects/2) and can be viewed to see more information on the project cards.
+
+![Kanban image](docs/readme/kanban.png)
+
+## Epics
+
+The project had **10** main Epics (milestones):
+<br>
+
+**EPIC 1 - Getting Set Up**
  
-#### Site Owner Goals
- 
-* As the site owner I would like to:
-  * Provide a site that's highly accessible to all customers.
-  * Be able to advertise any offers or relative information to customers by means of an information banner.
-  * Be able to gather subscribers for my newsletter by advetising the link on the site.
-  * Be able to manage products.
-    * I would like to be able to add new products to the site.
-    * I would like to be able to update existing products.
-    * I would like to be able to delete existing products.
-  * Be able to view my workload.
-    * I would like to be able to view all current orders in production sorted by date ordered.
-    * I would like to be able to change the status of an order when the product has been created.
-    * I would like to change the status of an order when the product has been dispatched.
-    * I would like to send an order despatched email to the customer when the order is complete.
+The getting set up epic is for carrying out all tasks needed to the app off the ground. This included some of the following steps:
 
+- Install as follows: pip3 install Django==3.2 django-allauth==0.41.0 Pillow black django-crispy-forms stripe
+- Set Up All Auth Templates
+- Get Settings.py ready for intended sites functions: context processors and authentication back ends
+- Create Main Nav and Social Media links
+- Create Base and Home html pages
+
+**EPIC 2 - View Records on Site**
+
+This Epic was concerned with rendering all records on the site to the user and how the user interacted with these products. This included the below tasks and stories:
+
+- User must be able to navigate to the products page (All Vinyl) and see a list of records for sales
+- User can use the Browse Label link in the Main Nav to choose the Label they are interested in the most
+- Create Admin on back handle so I can have control over the products details
+- From the product details page, user should be able to click on the record they want, see more details about that record and be able to add this to their shopping bag using quantity input buttons
+
+
+**EPIC 3 - Shopping Basket**
+
+The Shopping Basket epic is for all stories related to the user's ability to add records to the shopping basket, in addition to veiwing these and amending them. This included the following:
+
+- User should be able to select the quantity of each record they want using the plus and minus buttons provided on the products details page:
+- User should be able to see the value of selected products in shopping basket icon in Main Nav and page
+- User should be able to remove items and adjust quantities in their basket, the basket should respond accordingly
+
+**EPIC 4 - Toasts and Messages**
+
+This Epic was concerned with providing messages back to the site user according the their inputs and interactions. This didn't a lot of time to complete. However, it is still an important fearture for the site to have. This included:
+
+- Create Toast Success, Alert, Warning and Info templates
+- These messages are rendered for the site user to see
+
+**EPIC 5 - The Checkout App**
+
+This Epic involed the creation of the Checkout App and its initial functionality. This is a key part of the project and involved the below:
+
+- Create Order and Item Checkout models
+- Create functions within these models to generate order number and calculate the total of basket items
+- Create Admin on backend so I can view details of orders made on site
+- Create Signals and Order Form python files
+- Checkout Page will provide a summary of records to be purchased
+
+**EPIC 6 - Stripe Setup and Order Summary**
+
+This epic involved a lot of work and several files needed to be created. This was to ensure that the user can make purchases on the site with **Stripe** being used to handle this. The steps are as below:
+
+ - Set Up Stripe Account and Stripe elements file
+ - Create Stripe Elements JS file for Stripe payment intents
+ - Order form will render back succesful purchase details to the user
+ - Create Webhooks to Secure Payment Intents
+
+
+**EPIC 7 - User Profile & Contact Page**
+
+This epic handled the requirement for the user to have their own Profile Page, which would provide information about delivery details and previous orders:
+
+- User should Have Their Own Profile page: models and views created for this
+- User should be able to use the all auth templates to log in and out
+- User Can View Order History
+- Have a CONTACT US page to submit and queries to the site owner
+
+
+**EPIC 7 - Post Record Reviews**
+
+This epic handled a feature that registered site users can avail of. The user can leave reviews against records they have bought. These are approved by site admin for site visitors and to see.
+
+- ??
+- ??
+- ??
+
+**EPIC 8 - Newsletter**
+
+This epic handled a feature that registered site users can avail of. The user can leave reviews against records they have bought. These are approved by site admin for site visitors and to see.
+
+- ??
+- ??
+- ??
+
+**EPIC 9 - Deployment**
+
+This epic handled a feature that registered site users can avail of. The user can leave reviews against records they have bought. These are approved by site admin for site visitors and to see.
+
+- ??
+- ??
+- ??
+
+**EPIC 10 - Documentation**
+
+This epic handled a feature that registered site users can avail of. The user can leave reviews against records they have bought. These are approved by site admin for site visitors and to see.
+
+- ??
+- ??
+- ??
+
+<br>
+
+# The-Structure-Plane
+
+## The-Scope-Plane
+
+* Responsive Design - Site should be fully functional on all devices from 320px up
+* Hamburger menu for mobile devices
+* Ability to perform CRUD functionality on Menus and Bookings
+* Restricted role based features
+* Home page with restaurant information
+
+<br>
+
+## Features
+
+**Navigation Menu**
+
+The Main Navigation contains links for Home, All Vinyl, Record Reviews, Sign In, Register and Contact Us. This also includes the My Account and Shopping Basket icons.
+
+- ***If the user is signed in, they will see sign out and have the option to view their profile from the My Account dropdown***
+- ***If the user is the Admin/SuperUser, they will have the Store Management Nav link available to them, and the edit and delete options when on the record details page***
+
+The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices.
+
+![Navbar](docs/readme_images/navbar.PNG)
