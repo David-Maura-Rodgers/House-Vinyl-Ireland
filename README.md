@@ -215,4 +215,140 @@ The Main Navigation contains links for Home, All Vinyl, Record Reviews, Sign In,
 
 The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices.
 
-![Navbar](docs/readme_images/navbar.PNG)
+![Navbar](docs/readme/main-nav.png)
+
+<br>
+
+**Home Page & Search Bar**
+
+The home page contains a hero image of a seaside restaurant and the restaurant information at the top of the page. This will immediately make it evident to the user, what the purpose of the website is.
+
+The home page contains the main nav, a scrolling banner to detail any deals that are available. It also includes social media links and 2 images. These features are shown as below:
+
+![Home Page](docs/readme/home-page.png)
+
+<br>
+
+The search bar can be used to return any record to the user that matched either the title of artist of the record as shown below:
+
+![Search Bar](docs/readme/search-bar.png)
+
+<br>
+
+**Footer/Newsletter**
+
+???????????????????
+
+![Footer](docs/readme_images/footer.PNG)
+
+<br>
+
+**All Vinyl Page**
+
+This page is accessed when the user selects the ALL VINYL nav link. This will return a list of available records for sale on the site as shown below:
+
+![All Vinyl Page](docs/readme/all-vinyl.png)
+
+<br>
+
+**Record Details Page**
+
+This page will render more details on the record aside from the Title, Artist, Label and Price. This page will show a description and a track list. 
+
+- This includes a quantity selector feature
+- And a add to basket or keep shopping buttons
+- ***Edit and Delete buttons for SuperUser only***
+
+As shown below:
+
+![Record Details](docs/readme/record-detail.png)
+
+<br>
+
+**Browse Vinyl**
+
+There is a Dropdown BROWSE VINYL link on the main nav. When selected a list of labels appears and the user will be returned with the records of the label they have selected:
+
+![Edit Menu](docs/readme/browse-label.png)
+
+<br>
+
+**Shopping Basket**
+
+The shopping basket page will display all records selected by the user: title, artist, quantity, price and record image. The use will also have the ability to amend quantities and remove records:
+
+![Shopping Basket](docs/readme/basket.png)
+
+<br>
+
+**Secure Checkout & Form**
+
+From the shopping basket page, the site user will have the option to go to the secure checkout in order to finalise their purchase, as shown below:
+
+![Secure Checkout Button](docs/readme/secure-checkout-button.png)
+
+<br>
+
+The site user will then be taken to the Checkout page. They will see a summary of the order they are about to make along with a form they need to submit to complete their purchase, both are shown below:
+
+![Secure Checkout Page](docs/readme/checkout-page.png)
+
+<br>
+
+![Secure Checkout Form](docs/readme/checkout-form.png)
+
+
+**Checkout Success Page**
+
+After a successful purchase, the site user is then taken to the checkout success page:
+
+![Checkout Success](docs/readme/checkout-form.png)
+
+<br>
+
+**Record Reviews**
+
+The site user can access posted reviews on records that are created by other registered site user, by selecting the RECORD REVIEWS dropdown on the main nav. The site user can also choose to create a review, if they are a registered user.
+* ***Only registered users can create reviews, this is also shown below.***
+
+![Posted Review](docs/readme/posted-review.png)
+![Review Detail](docs/readme/review-detail.png)
+![Create Review](docs/readme/create-review.png)
+
+<br>
+
+**Contact Page**
+
+Site user can use the contact page. The contents of this communication will be sent to the site owner.
+
+![Create Review](docs/readme/contact.png)
+
+<br>
+
+**Store Management**
+(***For Super User only***)
+
+Site onwner can add a new record. And they can also edit or delete a record from the record details page:
+
+![Add Record](docs/readme/add-record.png)
+![Edit/Delete Record](docs/readme/edit-delete.png)
+
+<br>
+
+**Error Pages**
+
+TO BE COMPLETED . . . . . 
+
+<br>
+
+# The-Skeleton-Plane
+
+## Wireframes
+
+TO BE COMPLETED . . . . . 
+
+<br>
+
+# Testing
+
+Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
