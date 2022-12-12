@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /basket/
+Disallow: /checkout/
+Disallow: /profiles/
+Disallow: /contact/
+Disallow: /newsletter/
+Sitemap: https://house-vinyl-ireland.herokuapp.com/sitemap.xml
