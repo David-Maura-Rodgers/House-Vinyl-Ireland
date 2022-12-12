@@ -352,3 +352,6 @@ TO BE COMPLETED . . . . .
 # Testing
 
 Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
+
+## Ligthouse Testing
+Please see screen shot below for results of lighthouse testing on the deployed site
