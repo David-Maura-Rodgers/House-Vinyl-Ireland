@@ -225,6 +225,10 @@ input[name='q']::placeholder {
     border: 1px solid black !important;
 }
 
+.basket-border {
+    border: 3px solid black;
+}
+
 /* --------- BOOTSTRAP TOASTS ---------- */
 
 .message-container {
