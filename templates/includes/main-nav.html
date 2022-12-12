@@ -1,26 +1,24 @@
-<div class="collapse navbar-collapse" id="main-nav">
+<div class="collapse navbar-collapse">
     <ul class="navbar-nav ml-5">
 
         <!-- Links available to all visitors -->
         <li class="nav-item">
-            <div id="searchbar">
-                {% block searchbar %}
-                {% include 'includes/searchbar.html' %}
-                {% endblock %}
-            </div>
+            {% block searchbar %}
+            {% include 'includes/searchbar.html' %}
+            {% endblock %}
         </li>
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}" aria-label="link to home page">
-            <span class="span-nav">Home</a></span> 
+            <span class="span-nav">Home</span></a> 
         </li>
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'products' %}" aria-label="link to records page">
-            <span class="span-nav">All Vinyl</a></span>
+            <span class="span-nav">All Vinyl</span></a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link text-black font-weight-bold" href="{% url 'products' %}" aria-label="link to records page"
             id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="span-nav">Browse Label</a></span>
+                <span class="span-nav">Browse Label</span></a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?label=Defected" class="dropdown-item">Defected</a>
                 <a href="{% url 'products' %}?label=Faith" class="dropdown-item">Faith</a>
@@ -34,8 +32,8 @@
         <!-- Links are shown only to authenticated user -->
         <li class="nav-item dropdown">
             <a class="nav-link text-black font-weight-bold" href="#" aria-label="link to reviews page"
-                id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="span-nav">Record Reviews</a></span>
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="span-nav">Record Reviews</span></a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 <a href="{% url 'posted_review' %}" class="dropdown-item">Posted Reviews</a>
                 {% if request.user.is_authenticated %}
@@ -49,31 +47,31 @@
             {% if request.user.is_superuser %}
             <li class="nav-item">
                 <a class="nav-link text-black font-weight-bold" href="{% url 'add_product' %}" aria-label="link to add product page">
-                <span class="span-nav">Store Management</a></span>
+                <span class="span-nav">Store Management</span></a>
             </li>
             {% endif %}
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'account_logout' %}" aria-label="link to sign out">
-            <span class="span-nav">Sign Out</a></span>        
+            <span class="span-nav">Sign Out</span></a>        
         </li>
 
         <!-- Links shown if user is not signed in -->
         {% else %}
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'account_login' %}" aria-label="link to sign in page">
-            <span class="span-nav">Sign In</a></span>
+            <span class="span-nav">Sign In</span></a>
             
         </li>
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'account_signup' %}" aria-label="link to sign up page">
-            <span class="span-nav">Register</a></span>
+            <span class="span-nav">Register</span></a>
         </li>
         {% endif %}
 
         <!-- Contact link available to all visitors -->
         <li class="nav-item mr-5">
             <a class="nav-link text-black font-weight-bold" href="{% url 'contact' %}" aria-label="link to contact us page">
-            <span class="span-nav">Contact Us</a></span>
+            <span class="span-nav">Contact Us</span></a>
         </li>
         <li class="list-inline-item dropdown">
             <a class="nav-link text-black font-weight-bold" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
