@@ -1,11 +1,13 @@
-<div class="collapse navbar-collapse">
+<div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav ml-5">
 
         <!-- Links available to all visitors -->
         <li class="nav-item">
-            {% block searchbar %}
-            {% include 'includes/searchbar.html' %}
-            {% endblock %}
+            <div id="searchbar">
+                {% block searchbar %}
+                {% include 'includes/searchbar.html' %}
+                {% endblock %}
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link text-black font-weight-bold" href="{% url 'home' %}" aria-label="link to home page">
@@ -32,7 +34,7 @@
         <!-- Links are shown only to authenticated user -->
         <li class="nav-item dropdown">
             <a class="nav-link text-black font-weight-bold" href="#" aria-label="link to reviews page"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="span-nav">Record Reviews</span></a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 <a href="{% url 'posted_review' %}" class="dropdown-item">Posted Reviews</a>

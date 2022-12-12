@@ -225,47 +225,6 @@ input[name='q']::placeholder {
     border: 1px solid black !important;
 }
 
-/* https://codepen.io/michellymelo/pen/xMOEpR */
-.borderBlink{    
-    border:3px solid black;
-
-    animation-name: borderBlink;
-    animation-duration: 1s;
-    animation-iteration-count: 3;
-    border-color: transparent; 
-}
-
-@keyframes borderBlink {
-    50% {
-      border-color: #ffcd5f;
-    }
-  }
-
-/* https://stackoverflow.com/questions/23635271/how-to-make-an-elements-border-flash */
-.borderBlink:hover {    
-    -webkit-animation: borderBlink 1s step-end infinite;    
-    animation: borderBlink 1s step-end infinite;   
-    -webkit-animation: borderBlink 1s step-end infinite;    
-    animation-timing-function: borderBlink 0s;     
-}
-
-@-webkit-keyframes borderBlink {    
-    from, to {    
-        border-color: transparent;    
-    }    
-    50% {    
-        border-color: goldenrod;    
-    }    
-}    
-@keyframes borderBlink {    
-    from, to {    
-        border-color: transparent;    
-    }    
-    50% {    
-        border-color: goldenrod;    
-    }    
-} 
-
 /* --------- BOOTSTRAP TOASTS ---------- */
 
 .message-container {
