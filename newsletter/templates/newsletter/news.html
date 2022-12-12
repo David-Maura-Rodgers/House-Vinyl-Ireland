@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Home Page Title -->
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- load in main nav bar -->
+{% block content %}
+<div class="col mt-5">
+    <div class="row">
+        {% include 'includes/main-nav.html' %}
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center mt-3">
+            <h4 class="title-font">Sign Up For Our Newsletter</h4>
+            <form action="{% url 'newsletter' %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <p>By clicking <strong>Sign up</strong> you agree to the terms and conditions in our 
+                        <a href="https://www.privacypolicygenerator.info/live.php?token=7jQCFYS2K2pnw7wkyIOBoCY6F17HEojT" 
+                            target="_blank" rel="noopener" aria-label="external link to privacy policy">
+                            privacy policy</a>.</p>
+                <div class="input-group">
+                    <button class="btn btn-sm border-info bg-blue btn-blue mx-auto" type="submit">
+                        Sign up
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
