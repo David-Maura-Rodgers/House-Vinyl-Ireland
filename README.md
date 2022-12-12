@@ -373,7 +373,35 @@ TO BE COMPLETED . . . . .
 
 ## Wireframes
 
-TO BE COMPLETED . . . . . 
+Please see below for wireframes that I have created for this site:
+
+## Home Page
+![Wire Home](docs/wireframes/wire-home.png)
+
+<br>
+
+## All Vinyl / Browse Label
+![Wire Records](docs/wireframes/wire-records.png)
+
+<br>
+
+## Record Detail
+![Wire Record Info](docs/wireframes/wire-record-info.png)
+
+<br>
+
+## Checkout
+![Checkout](docs/wireframes/wire-checkout.png)
+
+<br>
+
+## Review List
+![Review List](docs/wireframes/wire-review-list.png)
+
+<br>
+
+## Review Detail
+![Review Detail](docs/wireframes/wire-review-detail.png)
 
 <br>
 
@@ -427,7 +455,7 @@ JavaScript code was run through [JSHINT](https://jshint.com) javascript validato
 The html elements of this page have largely been constructed using Bootstrap.
 - I have used the Inspect option to go through the responsiveness of all pages:
  
-![image](https://user-images.githubusercontent.com/91907661/184174549-f19ac205-ec31-4b2f-95b9-9972a047b061.png)
+![Responsiveness](docs/readme/responsiveness.png)
  
 - Site should be responsive and functional on all devices from 280px up
 - Hamburger menu appears for mobile devices
