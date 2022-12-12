@@ -22,16 +22,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center mt-3">
-            <h4 class="title-font">Sign Up For Our Newsletter</h4>
+            <h3 class="title-font text-white">Sign Up For Our Newsletter</h3>
             <form action="{% url 'newsletter' %}" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <p>By clicking <strong>Sign up</strong> you agree to the terms and conditions in our 
+                <p class="text-white">By clicking Sign up you agree to the terms and conditions in our 
                         <a href="https://www.privacypolicygenerator.info/live.php?token=7jQCFYS2K2pnw7wkyIOBoCY6F17HEojT" 
                             target="_blank" rel="noopener" aria-label="external link to privacy policy">
                             privacy policy</a>.</p>
                 <div class="input-group">
-                    <button class="btn btn-sm border-info bg-blue btn-blue mx-auto" type="submit">
+                    <button class="btn btn-outline-black rounded-0 btn-lg mx-auto" type="submit">
                         Sign up
                     </button>
                 </div>

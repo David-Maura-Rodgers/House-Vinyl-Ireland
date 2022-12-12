@@ -3,42 +3,56 @@
 
 <!-- load in main nav bar -->
 {% block content %}
-<div class="col mt-5">
-    <div class="row">
-        {% include 'includes/main-nav.html' %}
-    </div>
-</div>
-
-<!-- Header for page title and sub title -->
-<div class="col text-center mt-4">
-    <div class="row">  
-        <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 text-white text-center mt-5">
-            <h2 class="text-center mt-4">Our Contact Page</h2>
+    <div class="col mt-5">
+        <div class="row">
+            {% include 'includes/main-nav.html' %}
         </div>
     </div>
-</div>
 
-<div class="col text-center mt-1">
-    <div class="row">  
-        <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 text-white text-center mt-1">
-            <p class="text-center mt-1">
-                Please leave any comments you have about orders or other enquiries
-            </p>
+    <!-- Header for page title and sub title -->
+    <div class="col text-center mt-4">
+        <div class="row">  
+            <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 text-white text-center mt-5">
+                <h2 class="text-center mt-4">Our Contact Page</h2>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Form displayed to user for them to send a message to Site Admin -->
-<!-- Submit and Cancel buttons -->
-<div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 text-white">
-    <form method="POST" action="{% url 'contact' %}" id="contact-form">
-        {% csrf_token %}
-        {{ contact_form|crispy }}
-        <div class="text-center pb-5">
-            <button id="submit-button" class="btn btn-black rounded-0 text-white span-nav">Send Message</button>
-            <br>
-            <a class="span-nav text-danger" href="{% url 'home' %}" aria-label="Return user to home page">Cancel</a>
+    <div class="col text-center mt-1">
+        <div class="row">  
+            <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 text-white text-center mt-1">
+                <p class="text-center mt-1">
+                    Please leave any comments you have about orders or other enquiries
+                </p>
+            </div>
         </div>
-    </form>
-</div>
+    </div>
+
+    <!-- Form displayed to user for them to send a message to Site Admin -->
+    <!-- Submit and Cancel buttons -->
+    <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 text-white">
+        <form method="POST" action="{% url 'contact' %}" id="contact-form">
+            {% csrf_token %}
+            {{ contact_form|crispy }}
+            <div class="text-center pb-1">
+                <button id="submit-button" class="btn btn-black rounded-0 text-white span-nav">Send Message</button>
+                <br>
+                <a class="span-nav text-danger" href="{% url 'home' %}" aria-label="Return user to home page">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid text-black pb-1">
+        <hr class="my-2">
+        <div class="row">
+            <div class="col-12 col-md-4 text-center text-md-left order-2 order-md-1">
+                <ul class="list-unstyled">
+                    <li class="mb-2 text-center">
+                        Sign up for our newsletter <a href="{% url 'newsletter' %}">here!</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
