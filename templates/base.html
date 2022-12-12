@@ -2,99 +2,100 @@
 
 <!doctype html>
 <html lang="en">
-    <head>
-        {% block meta %}
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        {% endblock %}
 
-        {% block extra_meta %}
-        {% endblock %}
-
+<head>
+    {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
         <!-- SEO Keywords -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="keywords" content="house music, house vinyl, house vinyl ireland, records, house records">
         <meta name="description" content="House Vinyl Ireland, House, Vinyl">
+    {% endblock %}
 
-        <!-- css and boostrap -->
-        {% block corecss %}          
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-            <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        {% endblock %}
-       
-        {% block extra_css %}
-        {% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
 
-        <!-- scripts needed for JS functionality -->
-        {% block corejs %}
-            <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
-                crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-                crossorigin="anonymous"></script>
+    <!-- css and boostrap -->
+    {% block corecss %}          
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+    
+    {% block extra_css %}
+    {% endblock %}
 
-            <!-- Stripe -->
-            <script src="https://js.stripe.com/v3/"></script>
-        {% endblock %}
+    <!-- scripts needed for JS functionality -->
+    {% block corejs %}
+        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous"></script>
 
-        {% block extra_js %}
-        {% endblock %}
-       
-        <title>House Vinyl Ireland</title>
-    </head>
-    <body>
-        <!-- Load in the main nav bar -->
-        <header class="container-fluid fixed-top">
-            <div class="row" id="main-nav">
-                <nav class="navbar navbar-expand-lg navbar-light w-100" id="main-nav">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" 
-                        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    {% include 'includes/main-nav.html' %}
-                </nav>
-            </div>
-            {% block searchbar %}
-            {% endblock %}
-        </header>
+        <!-- Stripe -->
+        <script src="https://js.stripe.com/v3/"></script>
+    {% endblock %}
 
-        <!-- will display appropriate messages according to user interaction -->
-        {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
+    {% block extra_js %}
+    {% endblock %}
+    
+    <title>House Vinyl Ireland</title>
+</head>
+<body>
+    <!-- Load in the main nav bar -->
+    <header class="container-fluid fixed-top">
+        <div class="row" id="main-nav">
+            <nav class="navbar navbar-expand-lg navbar-light w-100" id="main-nav">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" 
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/main-nav.html' %}
+            </nav>
         </div>
-        {% endif %}
-
-        {% block page_header %}
+        {% block searchbar %}
         {% endblock %}
+    </header>
 
-        {% block content %}
-        {% endblock %}
+    <!-- will display appropriate messages according to user interaction -->
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
 
-        <!-- javascript to show toasts -->
-        {% block postloadjs %}
-        <script type="text/javascript">
-            $('.toast').toast('show');
-        </script>
-        {% endblock %}
+    {% block page_header %}
+    {% endblock %}
 
-    </body>
+    {% block content %}
+    {% endblock %}
+
+    <!-- javascript to show toasts -->
+    {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+    {% endblock %}
+
+</body>
 </html>
