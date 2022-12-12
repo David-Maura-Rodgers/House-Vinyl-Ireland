@@ -23,6 +23,10 @@ body {
     background-color: rgb(170, 222, 121);
 }
 
+footer {
+    background-color: rgb(170, 222, 121);
+}
+
 #searchbar {
     min-width: 20vw;
     margin-top: 2%;
@@ -80,7 +84,7 @@ body {
 .home-image {
     background: url("/static/images/home-header-vinyl-4.jpg") no-repeat center center;
     background-size: cover;
-    height: 50vh;
+    height: 45vh;
     margin-bottom: 1%;
     border-radius: 25px;
     border: 4px solid #f6a312;
@@ -89,7 +93,7 @@ body {
 .social-image {
     background: url("/static/images/social-media-4.png") no-repeat center center;
     background-size: cover;
-    height: 50vh;
+    height: 45vh;
     border-radius: 25px;
     border: 4px solid #f6a312;
     margin-bottom: 1%;
