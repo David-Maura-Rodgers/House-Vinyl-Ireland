@@ -1,5 +1,5 @@
 '''
-house_vinyl_ireland URL Configuration
+House Vinyl Ireland URL Configuration
 '''
 
 from django.contrib import admin

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Title Page Header -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,6 +11,7 @@
     </div>
 {% endblock %}
 
+<!-- Header info for posted review -->
 {% block content %}
     <div class="container-fluid">
         <div class="col-md-6 offset-md-3 pb-5">
@@ -18,6 +20,7 @@
             <h2 class="text-white">Label: {{ review.label }}</h2>
             <p class="text-white">Poster: {{ review.user }} <br>Created on: {{ review.created_on }}</p>
             
+            <!-- Display the contect of the review -->
             <!-- The | safe filter is used inside the template tags -->
             <div class="review-detail-card bg-info">
                 <p class="text-black p-3">

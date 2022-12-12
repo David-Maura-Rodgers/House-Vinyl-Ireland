@@ -5,7 +5,10 @@ from products.models import Record
 
 
 def basket_contents(request):
-
+    '''
+    Function to hold basket in a list and apply calculations
+    And return this nack to user
+    '''
     basket_items = []
     total = 0
     record_count = 0

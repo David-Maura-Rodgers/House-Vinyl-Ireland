@@ -9,6 +9,7 @@
         <a class="btn btn-outline-black rounded-0 text-white span-nav" href="{% url 'products' %}">Home Page</a>
     </div>
 
+    <!-- pagination for review posts -->
     {% if is_paginated %}
 
         <nav aria-label="Page navigation">
@@ -27,8 +28,9 @@
 
     {% endif %}
     
+    <!-- display each posted review in a List view -->
+    <!-- Will have key info displayed on each card -->
     <div class="row">
-
         {% for review in review_list %}
         <div class="col-md-6 offset-md-3 mt-2 pt-2">
             <div class="card text-center">

@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- load in css for profile page -->
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
+
+<!-- Tile page header -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -22,6 +25,8 @@
                 <hr>
             </div>
         </div>
+
+        <!-- Displays delivery information for logged in site user -->
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="text-info">Default Delivery Information</p>
@@ -32,6 +37,8 @@
                         Update Information</button>
                 </form>
             </div>
+
+            <!-- Table to display order history, in date order -->
             <div class="col-12 col-lg-6">
                 <p class="text-info">Order History</p>
                 <div class="order-history table-responsive">
@@ -73,6 +80,7 @@
         </div>
 {% endblock %}
 
+<!-- load in css for countryfield on form -->
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>

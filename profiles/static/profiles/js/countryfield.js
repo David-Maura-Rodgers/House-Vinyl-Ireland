@@ -1,3 +1,4 @@
+// Handle colour display when order form is loaded for the country field
 let countrySelected = $('#id_default_country').val();
 if(!countrySelected) {
     $('#id_default_country').css('color', '#aab7c4');

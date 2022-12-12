@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+<!-- Header for page title -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -15,6 +16,7 @@
     </div>
 {% endblock %}
 
+<!-- returns order summary before completing the purchase -->
 {% block content %}
     <div class="container">
         <div class="row">
@@ -72,6 +74,7 @@
             </div>
         </div>
 
+        <!-- Form for the site user to complete the purchase order form -->
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="text-white">Please fill out the form below to complete your order</p>
@@ -119,7 +122,8 @@
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
-
+                    
+                    <!-- Adjust and complete order buttons -->
                     <div class="submit-button text-right mt-5 mb-2">                    
 						<a href="{% url 'view_basket' %}" class="btn btn-outline-black rounded-0">
 							<span class="icon">
@@ -144,6 +148,7 @@
             </div>
         </div>
     </div>
+    <!-- Loads the overlay spinner when form is submitted -->
     <div id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">
             <span class="icon">
@@ -153,6 +158,7 @@
     </div>
 {% endblock %}
 
+<!-- loads js file for stripe elements -->
 {% block postloadjs %}
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}

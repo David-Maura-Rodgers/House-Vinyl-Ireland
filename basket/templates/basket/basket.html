@@ -2,6 +2,7 @@
 {% load static %}
 {% load basket_tools %}
 
+<!-- Header for page title -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -11,6 +12,7 @@
     </div>
 {% endblock %}
 
+<!-- Sub header for basket items -->
 {% block content %}
     <div class="container mb-2">
         <div class="row">
@@ -20,7 +22,7 @@
                 <hr>
             </div>
         </div>
-
+        <!-- Will display every item that has been selected for purchase -->
         <div class="row">
             <div class="col pb-5 pt-0 mt-0">
                 {% if basket_items %}
@@ -65,6 +67,7 @@
                         </div>
                     </div>
                     <div class="table-responsive rounded d-none d-md-block">
+                        <!-- Table will hold all of the record info to be shown to user -->
                         <table class="table table-sm table-borderless">
                             <thead class="text-white">
                                 <tr>
@@ -75,7 +78,7 @@
                                     <th scope="col" class="font-weight-normal">Subtotal</th>
                                 </tr>
                             </thead>
-
+                            <!-- Table below will display all the includes needed for forms and calculations -->
                             {% for item in basket_items %}
                                 <tr>
                                     <td class="p-3 w-25">
@@ -95,6 +98,7 @@
                                     </td>
                                 </tr>
                             {% endfor %}
+                            <!-- Will display basket total and Checkout Buttons -->
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     {% include "basket/basket-total.html" %}
@@ -108,6 +112,7 @@
                         </table>
                     </div>
                 {% else %}
+                    <!-- Will be displayed when basket is empty or emptied of any records -->
                     <p class="lead mb-5 text-white">Your basket is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                         <span class="icon">
@@ -121,6 +126,7 @@
     </div>
 {% endblock %}
 
+<!-- Javascript which listens for quantity puls and minus clicks -->
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Title Page Header -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -28,6 +29,8 @@
                     <p class="font-weight-normal text-white">Showing {{ records|length }} 
                         Available Records {% if search_query %}for <strong>{{ search_query }}</strong>{% endif %}</p>
                 </div>
+
+                <!-- Displays all records available for purchase on the site -->
                 <div class="row">
                     {% for record in records %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -61,6 +64,8 @@
                                 {% endif %}
                             </div>
                         </div>
+
+                        <!-- Adjusts columns to display records based on screen size -->
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>

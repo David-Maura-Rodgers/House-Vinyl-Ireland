@@ -9,6 +9,8 @@
     </div>
 {% endblock %}
 
+<!-- Container to display quantity buttons, add to basket and keep shopping buttons -->
+<!-- Display edit and delete buttons if Super User/Admin is logged in -->
 {% block content %}
     <div class="container-fluid" id="product-page-container">
         <form class="form" action="{% url 'add_to_basket' record.id %}" method="POST">
@@ -61,6 +63,8 @@
                 </div>
             </div>
         </form>
+
+        <!-- Displays all the record info in seperate containers -->
         <div class="row">
             <div class="col-12 col-md-4 col-lg-4">
                 <div class="image-container my-5 shadow p-3 mb-2 bg-light rounded">
@@ -97,6 +101,7 @@
                             </tr>
                             <tbody>
                                 <tr>
+                                    <!-- Displays track list for record -->
                                     <th scope="row">
                                     {% for track in record.track_as_list %}
                                         <span class="mt-1">{{track}}</span>

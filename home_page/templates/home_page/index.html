@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- Home Page Title -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,6 +11,7 @@
     </div>
 {% endblock %}
 
+<!-- scrolling banner to display current details -->
 {% block content %}
     <div class="container-fluid my-auto">
         <div class="row">
@@ -35,10 +37,16 @@
                     have even more labels and records available for you in the very future.</i>
                 </p>
             </div>
+
+            <!-- Vinyl Image on left of screen -->
             <div class="image-container home-image col-lg-5 offset-1 mr-1">
             </div>
+
+            <!-- Social Media Image on left of screen -->
             <div class="image-container social-image col-lg-5">
                 <div class="p-3 text-black social-links mt-5">Follow Us:<br>
+
+                    <!-- Social Media Links -->
                     <ul>
                         <li class="p-1 text-black social-links">Facebook: <a href="https://www.facebook.com" 
                             target="_blank" rel="noopener nofollow" aria-label="Visit our Facebook page (opens in a new tab)">

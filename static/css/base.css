@@ -232,7 +232,7 @@ input[name='q']::placeholder {
     animation-name: borderBlink;
     animation-duration: 1s;
     animation-iteration-count: 3;
-    /* add 'border-color: transparent' if you wish no border to show initially */  
+    border-color: transparent; 
 }
 
 @keyframes borderBlink {
@@ -266,7 +266,7 @@ input[name='q']::placeholder {
     }    
 } 
 
-/* ------------------------------- bootstrap toasts */
+/* --------- BOOTSTRAP TOASTS ---------- */
 
 .message-container {
     position: fixed;
