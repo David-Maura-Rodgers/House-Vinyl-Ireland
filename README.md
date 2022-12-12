@@ -382,7 +382,9 @@ TO BE COMPLETED . . . . .
 Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
 
 ## Ligthouse Testing
-Please see screen shot below for results of lighthouse testing on the deployed site
+Please see screen shot below for results of lighthouse testing on the site:
+![Lighthouse](docs/readme/lighthouse.png)
+
 
 ## HTML
  
@@ -424,4 +426,35 @@ JavaScript code was run through [JSHINT](https://jshint.com) javascript validato
 ## Responsiveness
 The html elements of this page have largely been constructed using Bootstrap.
 - I have used the Inspect option to go through the responsiveness of all pages:
+ 
+![image](https://user-images.githubusercontent.com/91907661/184174549-f19ac205-ec31-4b2f-95b9-9972a047b061.png)
+ 
+- Site should be responsive and functional on all devices from 280px up
+- Hamburger menu appears for mobile devices
+ 
+<br>
+ 
+# BUGS & FUTURE ENHANCEMENTS/FEATURES
+ 
+### **Bugs & Known Issues**
+- In the commit history there may appear to be some issues with my env.py file. I may have committed too early without having done this properly.
+- Again, with the env.py file, my database on Heroku became corrupted so I had to generate new a new Postgres database key variable
+- I was trying to implement the Edit and Delete Review function to be accessible from the nav bar, but could not get it to work as hoped. Instead, these feature are accessible from review_detail.html which is accessed via clicking on the the Review Title on view list on the Home page or Your Reviews page
+- No lang attribute for html class. This has now been added with "en" value
+- Some of the hr lines appear slightly thicker than other in places
+- Button inside anchor tags that needed to be changed to forms to be compliant
+- Submit Changes button won't go back to Your Reviews page, instead goes back to Home page
+- User has to be told to use br html tags to create paragraphs in create a review and edit review forms
+ 
+<br>
+ 
+### **Future features and enhancements**
+- Users can see a preview of their post before hitting the Submit button
+- User will be able to submit their own photos instead of the one which appears as default
+- User can use a search function which searches for strings (for game names, as example)
+- User can search for all reviews that are reviewed on a particular console (controlled by the drop down menu choices)
+- I wanted to implement the summernote panel on the front end, however, I tried several times to make the note panel responsive to screen width changes. Unfortunately, I had no more time to get this fixed and had to abandon the idea.
+- Contact Us page could be added for site user to contact the Site Admin
+ 
+<br>
  
