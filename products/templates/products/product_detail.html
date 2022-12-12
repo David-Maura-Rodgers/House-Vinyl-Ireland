@@ -114,10 +114,24 @@
                 </div>
             </div>
         </div>
-        <div class="text-center pb-5 mt-0">
+        <div class="text-center pb-2 mt-0">
             <a class="btn btn-outline-black rounded-0 text-white span-nav" href="{% url 'products' %}">Home Page</a>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid text-black pb-1 bg-success bg-gradient">
+        <hr class="my-2">
+        <div class="row">
+            <div class="col-12 col-md-4 text-center text-md-left order-2 order-md-1">
+                <ul class="list-unstyled">
+                    <li class="mb-2 text-center">
+                        Sign up for our newsletter <a href="{% url 'newsletter' %}">here!</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 {% endblock %}
 
 {% block postloadjs %}
