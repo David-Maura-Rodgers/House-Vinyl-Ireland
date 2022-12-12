@@ -1,7 +1,7 @@
 '''
 House Vinyl Ireland URL Configuration
 '''
-
+from .views import handler404
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
