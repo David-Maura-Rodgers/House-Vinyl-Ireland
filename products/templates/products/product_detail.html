@@ -56,8 +56,14 @@
                 <div class="col-4" id="edit-btn">
                     {% if request.user.is_superuser %}
                         <article class="mt-5 ml-5 border text-center">
-                            <a href="{% url 'edit_product' record.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' record.id %}">Delete</a>
+                            <a href="{% url 'edit_product' record.id %}">Edit</a>
+                            
+                            {% include 'products/confirm_delete.html' %}
+                            <!-- Button trigger modal --> | 
+                            <a class="text-danger confirm-delete" href="{% url 'delete_product' record.id %}"
+                                data-toggle="modal" data-target="#deleteRecord" id="delete_button{{ record.id }}" 
+                                aria-label="delete record">Delete
+                            </a>
                         </article>
                     {% endif %}
                 </div>
@@ -137,4 +143,17 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+
+<!-- Handles click events for confirm delet modal -->
+<script>
+    $(document).on('click', '.confirm-delete', function() {
+        $("#deleteRecord").attr("record-id", $(this).attr("id"));
+    });
+
+    $(document).on('click', '#confirmDeleteButton', function () {
+    var record = $("#confirmDeleteButton").closest(".modal").attr("record-id");
+    window.location = $("#".concat(record)).attr("href");
+    });
+</script>
+
 {% endblock %}

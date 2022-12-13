@@ -1,0 +1,25 @@
+<!-- Modal -->
+<div class="modal fade" id="deleteRecord" tabindex="-1" role="dialog" record-id="" aria-labelledby="delete_record_label" 
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title text-white" id="delete_record_label">Delete Record</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body confirm-delete text-center">
+                <p>Are you sure you want to delete this Record?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" 
+                    class="btn btn-blue bg-blue border-info shadow ml-auto" data-dismiss="modal">
+                    <strong>No</strong></button>
+                <button type="button" 
+                    class="btn btn-blue bg-blue border-info shadow mr-auto" data-dismiss="modal" 
+                    id="confirmDeleteButton"><strong>Yes</strong></button>
+            </div>
+        </div>
+    </div>
+</div>
